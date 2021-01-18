@@ -16,28 +16,28 @@ public class DijkstraAlg {
                 put( "C", 1 );
             }} )  );
             put("B", new GraphNode( "B", new HashMap<String, Integer>(  ){{
+                put( "D", 1 );
                 put( "E", 6 );
             }} )  );
             put("C", new GraphNode( "C", new HashMap<String, Integer>(  ){{
                 put( "D", 5 );
             }} )  );
             put("D", new GraphNode( "D", new HashMap<String, Integer>(  ){{
-                put( "B", 1 );
                 put( "E", 2 );
             }} ) );
             put( "E", new GraphNode( "E", Collections.emptyMap() ));
         }};
 
         List<String> fastestRoute;
-        fastestRoute =  findFastestRoute("A", "E" , graph);
-        System.out.println(fastestRoute.toString());
+        fastestRoute =  findShortestRoute("A", "E" , graph);
+        log.info( "Shortest route: " + fastestRoute.toString());
 
 
 
     }
 
 
-    public static List<String> findFastestRoute(String startNode,String finalNode ,Map<String, GraphNode> graph){
+    public static List<String> findShortestRoute(String startNode, String finalNode , Map<String, GraphNode> graph){
 
         Deque<String> queueOfNodes = new ArrayDeque<>();
         queueOfNodes.addAll( graph.get( startNode ).friends.keySet() );
@@ -84,7 +84,7 @@ public class DijkstraAlg {
             fastestRouteList.add( nextNode );
         }
        // return Arrays.asList( "A", "B", "C" );
-        log.info( distances.get( finalNode ).toString() );
+        log.info( "Shortest distance length: " + distances.get( finalNode ).toString() );
         return fastestRouteList;
     }
 
