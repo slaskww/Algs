@@ -6,6 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="f48091f6-5837-4b55-ac82-ea2d59b0e855" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DijkstraAlg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DijkstraAlg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DijkstraAlg$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DijkstraAlg$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DijkstraAlg$1$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DijkstraAlg$1$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DijkstraAlg$1$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DijkstraAlg$1$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DijkstraAlg$1$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DijkstraAlg$1$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DijkstraAlg$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DijkstraAlg$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DijkstraAlg$GraphNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DijkstraAlg$GraphNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/DijkstraAlg.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DijkstraAlg.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,6 +23,16 @@
   <component name="ErrorTreeViewConfiguration">
     <option name="autoscrollToSource" value="true" />
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="true" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -111,68 +128,63 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
-  <component name="RunManager" selected="Application.DijkstraAlg">
-    <configuration name="DijkstraAlg" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DijkstraAlg" />
-      <module name="qs" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="C:/Users/CP24/Desktop/IdeaProjects/qs" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" value="" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="GraphSearchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.DijkstraAlgTest.testWithOneNodeGraph">
+    <configuration name="DijkstraAlgTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="qs" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GraphSearchTest" />
+      <option name="MAIN_CLASS_NAME" value="DijkstraAlgTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GraphSearchTest.findFirstGardener" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DijkstraAlgTest.testEmptyGraph" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="qs" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GraphSearchTest" />
-      <option name="METHOD_NAME" value="findFirstGardener" />
+      <option name="MAIN_CLASS_NAME" value="DijkstraAlgTest" />
+      <option name="METHOD_NAME" value="testEmptyGraph" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SortTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DijkstraAlgTest.testFiveNodeGraph" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="qs" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SortTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="DijkstraAlgTest" />
+      <option name="METHOD_NAME" value="testFiveNodeGraph" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DijkstraAlgTest.testWithGivenWrongStartAndFinalNodeValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="qs" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DijkstraAlgTest" />
+      <option name="METHOD_NAME" value="testWithGivenWrongStartAndFinalNodeValues" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DijkstraAlgTest.testWithOneNodeGraph" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="qs" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DijkstraAlgTest" />
+      <option name="METHOD_NAME" value="testWithOneNodeGraph" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DijkstraAlg" />
-        <item itemvalue="Gradle.C:/Users/CP24/Desktop/IdeaProjects/qs" />
-        <item itemvalue="JUnit.SortTest" />
-        <item itemvalue="JUnit.GraphSearchTest" />
-        <item itemvalue="JUnit.GraphSearchTest.findFirstGardener" />
+        <item itemvalue="JUnit.DijkstraAlgTest.testWithOneNodeGraph" />
+        <item itemvalue="JUnit.DijkstraAlgTest" />
+        <item itemvalue="JUnit.DijkstraAlgTest.testFiveNodeGraph" />
+        <item itemvalue="JUnit.DijkstraAlgTest.testWithGivenWrongStartAndFinalNodeValues" />
+        <item itemvalue="JUnit.DijkstraAlgTest.testEmptyGraph" />
       </list>
     </recent_temporary>
   </component>

@@ -1,3 +1,4 @@
+import com.sun.deploy.util.ArrayUtil;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
@@ -7,37 +8,11 @@ import java.util.*;
 public class DijkstraAlg {
 
 
-    public static void main(String[] args) {
-
-
-        Map<String, GraphNode> graph = new HashMap<String, GraphNode>(  ){{
-            put("A", new GraphNode( "A", new HashMap<String, Integer>(  ){{
-                put( "B", 3 );
-                put( "C", 1 );
-            }} )  );
-            put("B", new GraphNode( "B", new HashMap<String, Integer>(  ){{
-                put( "D", 1 );
-                put( "E", 6 );
-            }} )  );
-            put("C", new GraphNode( "C", new HashMap<String, Integer>(  ){{
-                put( "D", 5 );
-            }} )  );
-            put("D", new GraphNode( "D", new HashMap<String, Integer>(  ){{
-                put( "E", 2 );
-            }} ) );
-            put( "E", new GraphNode( "E", Collections.emptyMap() ));
-        }};
-
-        List<String> fastestRoute;
-        fastestRoute =  findShortestRoute("A", "E" , graph);
-        log.info( "Shortest route: " + fastestRoute.toString());
-
-
-
-    }
-
-
     public static List<String> findShortestRoute(String startNode, String finalNode , Map<String, GraphNode> graph){
+
+        if(graph.isEmpty()) return Collections.emptyList();
+        if(!graph.containsKey( startNode ) || !graph.containsKey( finalNode ))
+            throw new IllegalArgumentException("Invalid startNode or finalNode argument");
 
         Deque<String> queueOfNodes = new ArrayDeque<>();
         queueOfNodes.addAll( graph.get( startNode ).friends.keySet() );
@@ -83,9 +58,9 @@ public class DijkstraAlg {
              nextNode = parents.get( nextNode );
             fastestRouteList.add( nextNode );
         }
-       // return Arrays.asList( "A", "B", "C" );
-        log.info( "Shortest distance length: " + distances.get( finalNode ).toString() );
-        return fastestRouteList;
+
+         Collections.reverse( fastestRouteList );
+         return fastestRouteList;
     }
 
     @Data
