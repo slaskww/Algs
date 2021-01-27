@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f48091f6-5837-4b55-ac82-ea2d59b0e855" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GreedyAlg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GreedyAlg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GreedyAlgTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GreedyAlgTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,22 +122,12 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
-  <component name="RunManager" selected="JUnit.DijkstraAlgTest.testWithOneNodeGraph">
+  <component name="RunManager" selected="JUnit.GreedyAlgTest">
     <configuration name="DijkstraAlgTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="qs" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="DijkstraAlgTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DijkstraAlgTest.testEmptyGraph" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="qs" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DijkstraAlgTest" />
-      <option name="METHOD_NAME" value="testEmptyGraph" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -170,13 +162,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GreedyAlgTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="qs" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GreedyAlgTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GreedyAlgTest" />
         <item itemvalue="JUnit.DijkstraAlgTest.testWithOneNodeGraph" />
         <item itemvalue="JUnit.DijkstraAlgTest" />
         <item itemvalue="JUnit.DijkstraAlgTest.testFiveNodeGraph" />
         <item itemvalue="JUnit.DijkstraAlgTest.testWithGivenWrongStartAndFinalNodeValues" />
-        <item itemvalue="JUnit.DijkstraAlgTest.testEmptyGraph" />
       </list>
     </recent_temporary>
   </component>
