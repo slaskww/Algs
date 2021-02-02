@@ -122,36 +122,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
-  <component name="RunManager" selected="JUnit.GreedyAlgTest">
-    <configuration name="DijkstraAlgTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="qs" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DijkstraAlgTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DijkstraAlgTest.testFiveNodeGraph" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="qs" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DijkstraAlgTest" />
-      <option name="METHOD_NAME" value="testFiveNodeGraph" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DijkstraAlgTest.testWithGivenWrongStartAndFinalNodeValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="qs" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DijkstraAlgTest" />
-      <option name="METHOD_NAME" value="testWithGivenWrongStartAndFinalNodeValues" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.GreedyAlgTest.testFillingElevenElementMap">
     <configuration name="DijkstraAlgTest.testWithOneNodeGraph" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="qs" />
       <option name="PACKAGE_NAME" value="" />
@@ -171,13 +142,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GreedyAlgTest.testFillingElevenElementMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="qs" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GreedyAlgTest" />
+      <option name="METHOD_NAME" value="testFillingElevenElementMap" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GreedyAlgTest.testFillingEmptyMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="qs" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GreedyAlgTest" />
+      <option name="METHOD_NAME" value="testFillingEmptyMap" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GreedyAlgTest.testFillingOneElementMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="qs" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="GreedyAlgTest" />
+      <option name="METHOD_NAME" value="testFillingOneElementMap" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GreedyAlgTest.testFillingElevenElementMap" />
+        <item itemvalue="JUnit.GreedyAlgTest.testFillingEmptyMap" />
+        <item itemvalue="JUnit.GreedyAlgTest.testFillingOneElementMap" />
         <item itemvalue="JUnit.GreedyAlgTest" />
         <item itemvalue="JUnit.DijkstraAlgTest.testWithOneNodeGraph" />
-        <item itemvalue="JUnit.DijkstraAlgTest" />
-        <item itemvalue="JUnit.DijkstraAlgTest.testFiveNodeGraph" />
-        <item itemvalue="JUnit.DijkstraAlgTest.testWithGivenWrongStartAndFinalNodeValues" />
       </list>
     </recent_temporary>
   </component>
@@ -258,6 +259,16 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.util.NoSuchElementException" package="java.util" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://$PROJECT_DIR$/../../../../../Java/jdk1.8.0_201/src.zip!/java/util/Arrays.java">

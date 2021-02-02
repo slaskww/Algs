@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 @Slf4j
 public class GreedyAlgTest {
 
@@ -34,10 +36,22 @@ public class GreedyAlgTest {
     public void testFillingEmptyMap(){
 
   //  uSStatesMap.forEach( (s, usState) -> log.info( s + "\n" + usState.getNeighboursStates().stream().collect( Collectors.joining("\n") ) ) );
+
+    assertThrows(IllegalArgumentException.class, () -> GreedyAlg.fillMapOfUSStatesWithColor( Collections.emptyMap() ));
+}
+
+@Test
+public void testFillingOneElementMap(){
+    Map<String, GreedyAlg.USState> oneStateMap = new HashMap<String, GreedyAlg.USState>(){{put( "Alaska", new GreedyAlg.USState( "Alaska", Collections.emptySet() ) );}};
+
+    assertEquals( new HashSet<String>(){{add( "white" );}}, GreedyAlg.fillMapOfUSStatesWithColor( oneStateMap ).keySet() );
+
 }
 
 @Test
     public void testFillingElevenElementMap(){
+
+    assertEquals(new HashSet<String>(){{addAll( Arrays.asList("orange", "yellow", "black", "white" ));}}, GreedyAlg.fillMapOfUSStatesWithColor( uSStatesMap ).keySet());
 
 }
 
