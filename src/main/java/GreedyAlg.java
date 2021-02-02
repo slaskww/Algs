@@ -26,8 +26,6 @@ public class GreedyAlg {
          Set<String> neighboursOfProcessedState = uSStates.get( processedState ).getNeighboursStates();
            boolean isStateColoredWithExistingColor = false;
 
-            String colorOfProcessedState = fillWithColor(processedState);
-
             if(mapOfColouredStates.isEmpty()){
                 mapOfColouredStates.put( colors.pop(), new HashSet<String>(){{add( processedState );}} );
             } else{
@@ -68,18 +66,6 @@ public class GreedyAlg {
 
         private String name;
         private Set<String> neighboursStates;
-    }
-
-    private static String fillWithColor(String state){
-
-        //sprawdź, czy sąsiedzi state'a zawierają się w secie pierwszego koloru
-        //jesli nie, dodajemy state do seta tego koloru i zwracamy ten kolor,
-        //jesli tak, przechodzimy do kolejnego koloru i sprawdzamy ponownie,
-        //jesli nie ma więcej kolorów, dodajemy nowy kolor (key), i set ze statem jako value, zwracamy kolor
-
-
-
-        return "none";
     }
 
     private static boolean checkIfStatesForCertainColorContainsNeighbours(Set<String> statesForColor, Set<String> neighbours){
