@@ -7,7 +7,10 @@
     <list default="true" id="f48091f6-5837-4b55-ac82-ea2d59b0e855" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GreedyAlg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GreedyAlg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GreedyAlgTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GreedyAlgTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GreedyAlg$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GreedyAlg$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GreedyAlg$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GreedyAlg$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GreedyAlg$USState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GreedyAlg$USState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GreedyAlg.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GreedyAlg.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
