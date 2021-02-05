@@ -72,9 +72,7 @@ public class GreedyAlg {
 
     private static boolean checkIfStatesForCertainColorContainsNeighbours(Set<String> statesForColor, Set<String> neighbours) {
 
-        Iterator<String> neighboursIter = neighbours.iterator();
-        while (neighboursIter.hasNext()) {
-            String neighbour = neighboursIter.next();
+        for (String neighbour : neighbours) {
             if (statesForColor.contains( neighbour )) return true;
         }
         return false;

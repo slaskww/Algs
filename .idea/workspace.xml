@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GreedyAlg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GreedyAlg.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/GreedyAlg$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GreedyAlg$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GreedyAlg$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GreedyAlg$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/GreedyAlg$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GreedyAlg$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/GreedyAlg$USState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GreedyAlg$USState.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/GreedyAlg.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GreedyAlg.class" afterDir="false" />
@@ -52,6 +53,9 @@
         <option value="$PROJECT_DIR$/src/main/java/DijkstraAlg.java" />
       </list>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
@@ -125,13 +129,10 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
-  <component name="RunManager" selected="JUnit.GreedyAlgTest.testFillingElevenElementMap">
-    <configuration name="DijkstraAlgTest.testWithOneNodeGraph" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.DynamicAlgBackpack">
+    <configuration name="DynamicAlgBackpack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DynamicAlgBackpack" />
       <module name="qs" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DijkstraAlgTest" />
-      <option name="METHOD_NAME" value="testWithOneNodeGraph" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -177,11 +178,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DynamicAlgBackpack" />
         <item itemvalue="JUnit.GreedyAlgTest.testFillingElevenElementMap" />
         <item itemvalue="JUnit.GreedyAlgTest.testFillingEmptyMap" />
         <item itemvalue="JUnit.GreedyAlgTest.testFillingOneElementMap" />
         <item itemvalue="JUnit.GreedyAlgTest" />
-        <item itemvalue="JUnit.DijkstraAlgTest.testWithOneNodeGraph" />
       </list>
     </recent_temporary>
   </component>
