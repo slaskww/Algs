@@ -1,8 +1,8 @@
-import java.util.Collections;
-import java.util.List;
+
+import java.util.Set;
 
 public interface DynamicAlg<T> {
 
-     List<T> findBest();
+     Set<T> findBest();
 
 }

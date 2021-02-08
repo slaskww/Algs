@@ -74,19 +74,21 @@ public class DynamicAlgBackpackTest {
     public void testBackpackWithArtefactsAndCapacity(){
 
         List<DynamicAlgBackpack.Artefact> artefacts = Arrays.asList(
-                new DynamicAlgBackpack.Artefact("Water", 1, 5 ),
-                new DynamicAlgBackpack.Artefact("Book", 2, 1 ),
-                new DynamicAlgBackpack.Artefact("Food", 4, 2 )
+                new DynamicAlgBackpack.Artefact("SWater", 3000, 4 ),
+                new DynamicAlgBackpack.Artefact("GFood", 1500, 1 ),
+                new DynamicAlgBackpack.Artefact("LBook", 2000, 3 ),
+                new DynamicAlgBackpack.Artefact("MFood", 1000, 1 ),
+                new DynamicAlgBackpack.Artefact("IFood", 2000, 1 )
 
         );
 
-        DynamicAlgBackpack backpack = new DynamicAlgBackpack(artefacts, 6 );
+        DynamicAlgBackpack backpack = new DynamicAlgBackpack(artefacts, 4);
 
-        assertArrayEquals( new DynamicAlgBackpack.Artefact[]{
-                        new DynamicAlgBackpack.Artefact("Food", 4, 2 ),
-                        new DynamicAlgBackpack.Artefact("Book", 2, 1 )
-
-                },
+        assertArrayEquals( new HashSet<DynamicAlgBackpack.Artefact>(){{
+            add( new DynamicAlgBackpack.Artefact("GFood", 1500, 1 ));
+            add( new DynamicAlgBackpack.Artefact("MFood", 1000, 1 ));
+            add( new DynamicAlgBackpack.Artefact("IFood", 2000, 1 ) );
+             }}.toArray(),
                 backpack.findBest().toArray() );
     }
 }

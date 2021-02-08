@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f48091f6-5837-4b55-ac82-ea2d59b0e855" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DynamicAlg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DynamicAlg.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DynamicAlgBackpack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DynamicAlgBackpack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/DynamicAlgBackpackTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DynamicAlgBackpackTest.java" afterDir="false" />
     </list>
@@ -125,7 +126,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
-  <component name="RunManager" selected="JUnit.DynamicAlgBackpackTest">
+  <component name="RunManager" selected="JUnit.DynamicAlgBackpackTest.testBackpackWithArtefactsAndCapacity">
     <configuration name="DynamicAlgBackpack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DynamicAlgBackpack" />
       <module name="qs" />
@@ -174,8 +175,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DynamicAlgBackpackTest" />
         <item itemvalue="JUnit.DynamicAlgBackpackTest.testBackpackWithArtefactsAndCapacity" />
+        <item itemvalue="JUnit.DynamicAlgBackpackTest" />
         <item itemvalue="JUnit.DynamicAlgBackpackTest.testBackpackWithZeroOrNegativeValueOfArtefacts" />
         <item itemvalue="Application.DynamicAlgBackpack" />
         <item itemvalue="JUnit.GreedyAlgTest.testFillingElevenElementMap" />
@@ -267,49 +268,6 @@
           <properties class="java.util.NoSuchElementException" package="java.util" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/DynamicAlgBackpack.java</url>
-          <line>26</line>
-          <properties class="DynamicAlgBackpack" method="findBest">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/DynamicAlgBackpack.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/DynamicAlgBackpack.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/DynamicAlgBackpack.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/DynamicAlgBackpack.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/DynamicAlgBackpack.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/DynamicAlgBackpack.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/DynamicAlgBackpack.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

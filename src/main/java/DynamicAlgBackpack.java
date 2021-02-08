@@ -3,10 +3,7 @@ import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 @Slf4j
 @Data
@@ -24,7 +21,7 @@ public class DynamicAlgBackpack implements DynamicAlg<DynamicAlgBackpack.Artefac
     }
 
     @Override
-    public List<Artefact> findBest() {
+    public Set<Artefact> findBest() {
 
         if(backpackCapacity <= 0 ) throw new IllegalArgumentException("Backpack capacity value must be positive");
         if(artefacts.isEmpty()) throw new IllegalArgumentException("Number of artifacts cannot be zero");
@@ -41,15 +38,15 @@ public class DynamicAlgBackpack implements DynamicAlg<DynamicAlgBackpack.Artefac
             for (int j = 0; j < backpackCapacity; j++){
 
                 int currTableElementValue;
-                List<Artefact>  currTableElementArtefactsList;
+                Set<Artefact>  currTableElementArtefactsList;
                 int lastMaxTableElementValue = getPreviousMaxTableValue(i - 1, j);
 
                 if(currArtefWeight > j + 1) {
                     currTableElementValue = 0;
-                    currTableElementArtefactsList = new ArrayList<>();
+                    currTableElementArtefactsList = new HashSet<>();
                 } else{
                     currTableElementValue = currArtefValue;
-                    currTableElementArtefactsList = new ArrayList<Artefact>(){{add( currentArtefact );}};
+                    currTableElementArtefactsList = new HashSet<Artefact>(){{add( currentArtefact );}};
                 }
 
                 currTableElementValue += getPreviousMaxTableValue( i - 1, j - currArtefWeight );
@@ -79,8 +76,8 @@ public class DynamicAlgBackpack implements DynamicAlg<DynamicAlgBackpack.Artefac
         return backpack[row][col].getValue();
     }
 
-    private List<Artefact>  getPreviousMaxTableArtefList(int row, int col){
-        if(row < 0 || col < 0) return Collections.emptyList();
+    private Set<Artefact>  getPreviousMaxTableArtefList(int row, int col){
+        if(row < 0 || col < 0) return Collections.emptySet();
 
         return backpack[row][col].getArtefacts();
     }
@@ -117,7 +114,7 @@ public class DynamicAlgBackpack implements DynamicAlg<DynamicAlgBackpack.Artefac
     static class TableElement{
 
         private int value;
-        private List<Artefact> artefacts;
+        private Set<Artefact> artefacts;
     }
 
     private void initializeBackpack(int rows, int cols){
