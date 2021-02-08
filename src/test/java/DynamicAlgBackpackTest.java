@@ -2,8 +2,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class DynamicAlgBackpackTest {
 
@@ -74,5 +73,20 @@ public class DynamicAlgBackpackTest {
     @Test
     public void testBackpackWithArtefactsAndCapacity(){
 
+        List<DynamicAlgBackpack.Artefact> artefacts = Arrays.asList(
+                new DynamicAlgBackpack.Artefact("Water", 1, 5 ),
+                new DynamicAlgBackpack.Artefact("Book", 2, 1 ),
+                new DynamicAlgBackpack.Artefact("Food", 4, 2 )
+
+        );
+
+        DynamicAlgBackpack backpack = new DynamicAlgBackpack(artefacts, 6 );
+
+        assertArrayEquals( new DynamicAlgBackpack.Artefact[]{
+                        new DynamicAlgBackpack.Artefact("Food", 4, 2 ),
+                        new DynamicAlgBackpack.Artefact("Book", 2, 1 )
+
+                },
+                backpack.findBest().toArray() );
     }
 }
