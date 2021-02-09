@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f48091f6-5837-4b55-ac82-ea2d59b0e855" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DynamicAlg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DynamicAlg.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DynamicAlgBackpack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DynamicAlgBackpack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DynamicAlgBackpackTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DynamicAlgBackpackTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DynamicAlgBackpack$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DynamicAlgBackpack$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DynamicAlgBackpack$Artefact.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DynamicAlgBackpack$Artefact.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DynamicAlgBackpack$TableElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DynamicAlgBackpack$TableElement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DynamicAlgBackpack.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DynamicAlgBackpack.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +129,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
-  <component name="RunManager" selected="JUnit.DynamicAlgBackpackTest.testBackpackWithArtefactsAndCapacity">
+  <component name="RunManager" selected="JUnit.DynamicAlgBackpackTest">
     <configuration name="DynamicAlgBackpack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DynamicAlgBackpack" />
       <module name="qs" />
@@ -175,10 +178,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DynamicAlgBackpackTest.testBackpackWithArtefactsAndCapacity" />
         <item itemvalue="JUnit.DynamicAlgBackpackTest" />
-        <item itemvalue="JUnit.DynamicAlgBackpackTest.testBackpackWithZeroOrNegativeValueOfArtefacts" />
+        <item itemvalue="JUnit.DynamicAlgBackpackTest.testBackpackWithArtefactsAndCapacity" />
         <item itemvalue="Application.DynamicAlgBackpack" />
+        <item itemvalue="JUnit.DynamicAlgBackpackTest.testBackpackWithZeroOrNegativeValueOfArtefacts" />
         <item itemvalue="JUnit.GreedyAlgTest.testFillingElevenElementMap" />
       </list>
     </recent_temporary>

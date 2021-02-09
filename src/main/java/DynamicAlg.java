@@ -3,6 +3,6 @@ import java.util.Set;
 
 public interface DynamicAlg<T> {
 
-     Set<T> findBest();
+     Set<T> findOptimalContents();
 
 }

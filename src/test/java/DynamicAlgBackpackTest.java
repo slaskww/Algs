@@ -18,7 +18,7 @@ public class DynamicAlgBackpackTest {
 
         DynamicAlgBackpack backpack = new DynamicAlgBackpack(artefacts, -4 );
 
-        assertThrows(IllegalArgumentException.class, () -> backpack.findBest());
+        assertThrows(IllegalArgumentException.class, () -> backpack.findOptimalContents());
     }
 
     @Test
@@ -33,7 +33,7 @@ public class DynamicAlgBackpackTest {
 
         DynamicAlgBackpack backpack = new DynamicAlgBackpack(artefacts, 0 );
 
-        assertThrows(IllegalArgumentException.class, () -> backpack.findBest());
+        assertThrows(IllegalArgumentException.class, () -> backpack.findOptimalContents());
     }
 
     @Test
@@ -42,7 +42,7 @@ public class DynamicAlgBackpackTest {
         List<DynamicAlgBackpack.Artefact> artefacts = new ArrayList<>();
         DynamicAlgBackpack backpack = new DynamicAlgBackpack( artefacts, 4 );
 
-        assertThrows( IllegalArgumentException.class, () -> backpack.findBest() );
+        assertThrows( IllegalArgumentException.class, () -> backpack.findOptimalContents() );
     }
 
     @Test
@@ -89,6 +89,6 @@ public class DynamicAlgBackpackTest {
             add( new DynamicAlgBackpack.Artefact("MFood", 1000, 1 ));
             add( new DynamicAlgBackpack.Artefact("IFood", 2000, 1 ) );
              }}.toArray(),
-                backpack.findBest().toArray() );
+                backpack.findOptimalContents().toArray() );
     }
 }

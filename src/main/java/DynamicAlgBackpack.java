@@ -9,7 +9,7 @@ import java.util.*;
 @Data
 public class DynamicAlgBackpack implements DynamicAlg<DynamicAlgBackpack.Artefact>{
 
-    private  TableElement[][] backpack;
+    private  BackpackElement[][] backpack;
     private  List<Artefact> artefacts;
     private  int backpackCapacity;
 
@@ -21,7 +21,7 @@ public class DynamicAlgBackpack implements DynamicAlg<DynamicAlgBackpack.Artefac
     }
 
     @Override
-    public Set<Artefact> findBest() {
+    public Set<Artefact> findOptimalContents() {
 
         if(backpackCapacity <= 0 ) throw new IllegalArgumentException("Backpack capacity value must be positive");
         if(artefacts.isEmpty()) throw new IllegalArgumentException("Number of artifacts cannot be zero");
@@ -30,53 +30,49 @@ public class DynamicAlgBackpack implements DynamicAlg<DynamicAlgBackpack.Artefac
         for(int i = 0; i < artefacts.size(); i++){
 
             Artefact currentArtefact = artefacts.get( i );
-            String currArtefName = currentArtefact.getName();
-            int currArtefValue = currentArtefact.getValue();
-            int currArtefWeight = currentArtefact.getWeight();
-
+            int currentArtefactValue = currentArtefact.getValue();
+            int currentArtefactWeight = currentArtefact.getWeight();
+            int currentBackpackElementValue;
+            Set<Artefact> currentBackpackElementSetOfArtefacts;
 
             for (int j = 0; j < backpackCapacity; j++){
 
-                int currTableElementValue;
-                Set<Artefact>  currTableElementArtefactsList;
-                int lastMaxTableElementValue = getPreviousMaxTableValue(i - 1, j);
-
-                if(currArtefWeight > j + 1) {
-                    currTableElementValue = 0;
-                    currTableElementArtefactsList = new HashSet<>();
+                if(currentArtefactWeight > j + 1) {
+                    currentBackpackElementValue = 0;
+                    currentBackpackElementSetOfArtefacts = new HashSet<>();
                 } else{
-                    currTableElementValue = currArtefValue;
-                    currTableElementArtefactsList = new HashSet<Artefact>(){{add( currentArtefact );}};
+                    currentBackpackElementValue = currentArtefactValue;
+                    currentBackpackElementSetOfArtefacts = new HashSet<Artefact>(){{add( currentArtefact );}};
                 }
 
-                currTableElementValue += getPreviousMaxTableValue( i - 1, j - currArtefWeight );
+                //We assume that the default local maximum value for the current element "backpack[i][j]" in the specified column "j" is above that element (backpack[i-1][j])
+                int localMaxBackpackElementValue = getSpecifiedBackpackElementValue(i - 1, j);
 
-                if (lastMaxTableElementValue > currTableElementValue){
+                //The current element 'backpack[i][j]' of the backpack contains the current artifact, and the remaining capacity can be filled with the contents of the element backpack[i-1][j-current artefact weight]
+                currentBackpackElementValue += getSpecifiedBackpackElementValue( i - 1, j - currentArtefactWeight );
+                currentBackpackElementSetOfArtefacts.addAll( getSpecifiedBackpackElementSetOfArtefacts(i - 1, j - currentArtefactWeight)  );
 
+
+                //We compare the value of the current backpack element 'backpack[i][j]' to the value of the default local maximum for the current column 'j'
+                //The higher value will be the final value of the backpack element "backpack[i][j]"
+                if (localMaxBackpackElementValue > currentBackpackElementValue){
                     backpack[i][j] = backpack[i-1][j];
                 } else{
-
-                    currTableElementArtefactsList.addAll(getPreviousMaxTableArtefList(i - 1, j - currArtefWeight)  );
-                    backpack[i][j] = new TableElement(currTableElementValue, currTableElementArtefactsList);
+                    backpack[i][j] = new BackpackElement(currentBackpackElementValue, currentBackpackElementSetOfArtefacts);
                 }
-
-
-
-              //  backpack[i][j] = getMax()
             }
         }
-
         return backpack[artefacts.size() - 1][backpackCapacity - 1].getArtefacts();
     }
 
-    private int getPreviousMaxTableValue(int row, int col){
+    private int getSpecifiedBackpackElementValue(int row, int col){
 
         if(row < 0 || col < 0) return 0;
 
         return backpack[row][col].getValue();
     }
 
-    private Set<Artefact>  getPreviousMaxTableArtefList(int row, int col){
+    private Set<Artefact> getSpecifiedBackpackElementSetOfArtefacts(int row, int col){
         if(row < 0 || col < 0) return Collections.emptySet();
 
         return backpack[row][col].getArtefacts();
@@ -111,7 +107,7 @@ public class DynamicAlgBackpack implements DynamicAlg<DynamicAlgBackpack.Artefac
 
     @Data
     @AllArgsConstructor
-    static class TableElement{
+    static class BackpackElement {
 
         private int value;
         private Set<Artefact> artefacts;
@@ -120,8 +116,7 @@ public class DynamicAlgBackpack implements DynamicAlg<DynamicAlgBackpack.Artefac
     private void initializeBackpack(int rows, int cols){
 
         if(cols < 0) cols = 0;
-        this.backpack = new TableElement[rows][cols];
+        this.backpack = new BackpackElement[rows][cols];
 
     }
-
 }
