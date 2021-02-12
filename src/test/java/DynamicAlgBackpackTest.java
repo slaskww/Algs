@@ -16,7 +16,7 @@ public class DynamicAlgBackpackTest {
 
         );
 
-        DynamicAlgBackpack backpack = new DynamicAlgBackpack(artefacts, -4 );
+        DynamicAlgBackpack backpack = new DynamicAlgBackpack(artefacts, -4);
 
         assertThrows(IllegalArgumentException.class, () -> backpack.findOptimalContents());
     }
@@ -40,7 +40,7 @@ public class DynamicAlgBackpackTest {
     public void testBackpackWithNoArtefacts(){
 
         List<DynamicAlgBackpack.Artefact> artefacts = new ArrayList<>();
-        DynamicAlgBackpack backpack = new DynamicAlgBackpack( artefacts, 4 );
+        DynamicAlgBackpack backpack = new DynamicAlgBackpack( artefacts, 4);
 
         assertThrows( IllegalArgumentException.class, () -> backpack.findOptimalContents() );
     }
@@ -74,21 +74,23 @@ public class DynamicAlgBackpackTest {
     public void testBackpackWithArtefactsAndCapacity(){
 
         List<DynamicAlgBackpack.Artefact> artefacts = Arrays.asList(
-                new DynamicAlgBackpack.Artefact("SWater", 3000, 4 ),
-                new DynamicAlgBackpack.Artefact("GFood", 1500, 1 ),
-                new DynamicAlgBackpack.Artefact("LBook", 2000, 3 ),
-                new DynamicAlgBackpack.Artefact("MFood", 1000, 1 ),
-                new DynamicAlgBackpack.Artefact("IFood", 2000, 1 )
+                new DynamicAlgBackpack.Artefact("Water", 3000, 4 ),
+                new DynamicAlgBackpack.Artefact("Food", 1500, 1 ),
+                new DynamicAlgBackpack.Artefact("Book", 2000, 3 ),
+                new DynamicAlgBackpack.Artefact("IPod", 1000, 1 ),
+                new DynamicAlgBackpack.Artefact("IPhone", 2000, 1 )
 
         );
 
-        DynamicAlgBackpack backpack = new DynamicAlgBackpack(artefacts, 4);
+        DynamicAlgBackpack backpack = new DynamicAlgBackpack(artefacts, 4, 0.5);
+
 
         assertArrayEquals( new HashSet<DynamicAlgBackpack.Artefact>(){{
-            add( new DynamicAlgBackpack.Artefact("GFood", 1500, 1 ));
-            add( new DynamicAlgBackpack.Artefact("MFood", 1000, 1 ));
-            add( new DynamicAlgBackpack.Artefact("IFood", 2000, 1 ) );
+            add( new DynamicAlgBackpack.Artefact("Food", 1500, 1 ));
+            add( new DynamicAlgBackpack.Artefact("IPod", 1000, 1 ));
+            add( new DynamicAlgBackpack.Artefact("IPhone", 2000, 1 ));
              }}.toArray(),
                 backpack.findOptimalContents().toArray() );
+
     }
 }

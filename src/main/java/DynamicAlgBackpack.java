@@ -4,20 +4,35 @@ import lombok.extern.slf4j.Slf4j;
 
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Data
+
 public class DynamicAlgBackpack implements DynamicAlg<DynamicAlgBackpack.Artefact>{
 
     private  BackpackElement[][] backpack;
     private  List<Artefact> artefacts;
     private  int backpackCapacity;
+    private double resolutionValue;
+    private int backpackResolution;
 
     public DynamicAlgBackpack(List<Artefact> artefacts, int backpackCapacity) {
         this.artefacts = artefacts;
         this.backpackCapacity = backpackCapacity;
+        this.resolutionValue = 1;
+        this.backpackResolution = backpackCapacity;
 
-        initializeBackpack(artefacts.size(), backpackCapacity);
+        initializeBackpack(artefacts.size(), (backpackCapacity));
+    }
+
+    public DynamicAlgBackpack(List<Artefact> artefacts, int backpackCapacity, double resolutionValue) {
+        this.artefacts = artefacts;
+        this.backpackCapacity = backpackCapacity;
+        this.resolutionValue = resolutionValue;
+        this.backpackResolution =  (int) (backpackCapacity/resolutionValue);
+
+        initializeBackpack(artefacts.size(), (int) (backpackCapacity / resolutionValue));
     }
 
     @Override
@@ -31,11 +46,12 @@ public class DynamicAlgBackpack implements DynamicAlg<DynamicAlgBackpack.Artefac
 
             Artefact currentArtefact = artefacts.get( i );
             int currentArtefactValue = currentArtefact.getValue();
-            int currentArtefactWeight = currentArtefact.getWeight();
+            double currentArtefactWeight = currentArtefact.getWeight() / resolutionValue;
             int currentBackpackElementValue;
             Set<Artefact> currentBackpackElementSetOfArtefacts;
 
-            for (int j = 0; j < backpackCapacity; j++){
+
+            for (int j = 0; j < backpackResolution; j++){
 
                 if(currentArtefactWeight > j + 1) {
                     currentBackpackElementValue = 0;
@@ -49,8 +65,8 @@ public class DynamicAlgBackpack implements DynamicAlg<DynamicAlgBackpack.Artefac
                 int localMaxBackpackElementValue = getSpecifiedBackpackElementValue(i - 1, j);
 
                 //The current element 'backpack[i][j]' of the backpack contains the current artifact, and the remaining capacity can be filled with the contents of the element backpack[i-1][j-current artefact weight]
-                currentBackpackElementValue += getSpecifiedBackpackElementValue( i - 1, j - currentArtefactWeight );
-                currentBackpackElementSetOfArtefacts.addAll( getSpecifiedBackpackElementSetOfArtefacts(i - 1, j - currentArtefactWeight)  );
+                currentBackpackElementValue += getSpecifiedBackpackElementValue( i - 1, j - (int) currentArtefactWeight );
+                currentBackpackElementSetOfArtefacts.addAll( getSpecifiedBackpackElementSetOfArtefacts(i - 1, j - (int) currentArtefactWeight));
 
 
                 //We compare the value of the current backpack element 'backpack[i][j]' to the value of the default local maximum for the current column 'j'
@@ -60,9 +76,13 @@ public class DynamicAlgBackpack implements DynamicAlg<DynamicAlgBackpack.Artefac
                 } else{
                     backpack[i][j] = new BackpackElement(currentBackpackElementValue, currentBackpackElementSetOfArtefacts);
                 }
+
             }
         }
-        return backpack[artefacts.size() - 1][backpackCapacity - 1].getArtefacts();
+
+        printBackpack();
+
+        return backpack[artefacts.size() - 1][backpackResolution - 1].getArtefacts();
     }
 
     private int getSpecifiedBackpackElementValue(int row, int col){
@@ -78,10 +98,11 @@ public class DynamicAlgBackpack implements DynamicAlg<DynamicAlgBackpack.Artefac
         return backpack[row][col].getArtefacts();
     }
 
+
     @Data
     static class Artefact{
 
-        public Artefact(String name, int value, int weight) {
+        public Artefact(String name, int value, double weight) {
 
             this.name = name;
             this.value = value;
@@ -91,7 +112,7 @@ public class DynamicAlgBackpack implements DynamicAlg<DynamicAlgBackpack.Artefac
 
         private String name;
         private int value;
-        private int weight;
+        private double weight;
 
         public int getValue() {
 
@@ -99,7 +120,7 @@ public class DynamicAlgBackpack implements DynamicAlg<DynamicAlgBackpack.Artefac
             return value;
         }
 
-        public int getWeight() {
+        public double getWeight() {
             if(this.weight <= 0) throw new IllegalArgumentException("Weight of artefact cannot be zero nor negative");
             return weight;
         }
@@ -118,5 +139,28 @@ public class DynamicAlgBackpack implements DynamicAlg<DynamicAlgBackpack.Artefac
         if(cols < 0) cols = 0;
         this.backpack = new BackpackElement[rows][cols];
 
+    }
+
+    public void printBackpack(){
+
+        StringBuilder builder = new StringBuilder();
+        builder.append( "\n" );
+
+        for (BackpackElement[] backpackElements : backpack) {
+
+            for (BackpackElement backpackElement : backpackElements) {
+
+                builder
+                        .append( "[" )
+                        .append( backpackElement.getArtefacts()
+                            .stream()
+                            .map( artefact -> artefact.name )
+                            .collect( Collectors.joining( ", " ) ) )
+                        .append( "]" );
+            }
+            builder.append( "\n" );
+        }
+
+        log.info( builder.toString() );
     }
 }

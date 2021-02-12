@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f48091f6-5837-4b55-ac82-ea2d59b0e855" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DynamicAlgBackpack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DynamicAlgBackpack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DynamicAlgBackpackTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DynamicAlgBackpackTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/DynamicAlgBackpack$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DynamicAlgBackpack$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/DynamicAlgBackpack$Artefact.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DynamicAlgBackpack$Artefact.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DynamicAlgBackpack$TableElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DynamicAlgBackpack$TableElement.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/DynamicAlgBackpack.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DynamicAlgBackpack.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +41,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -53,9 +60,6 @@
         <option value="$PROJECT_DIR$/src/main/java/DijkstraAlg.java" />
       </list>
     </option>
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
@@ -129,7 +133,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
-  <component name="RunManager" selected="JUnit.DynamicAlgBackpackTest">
+  <component name="RunManager" selected="JUnit.DynamicAlgBackpackTest.testBackpackWithArtefactsAndCapacity">
     <configuration name="DynamicAlgBackpack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DynamicAlgBackpack" />
       <module name="qs" />
@@ -178,8 +182,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DynamicAlgBackpackTest" />
         <item itemvalue="JUnit.DynamicAlgBackpackTest.testBackpackWithArtefactsAndCapacity" />
+        <item itemvalue="JUnit.DynamicAlgBackpackTest" />
         <item itemvalue="Application.DynamicAlgBackpack" />
         <item itemvalue="JUnit.DynamicAlgBackpackTest.testBackpackWithZeroOrNegativeValueOfArtefacts" />
         <item itemvalue="JUnit.GreedyAlgTest.testFillingElevenElementMap" />
@@ -270,6 +274,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.util.NoSuchElementException" package="java.util" />
           <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="14" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
