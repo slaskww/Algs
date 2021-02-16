@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f48091f6-5837-4b55-ac82-ea2d59b0e855" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DynamicAlgBackpack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DynamicAlgBackpack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/DynamicAlgBackpackTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DynamicAlgBackpackTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DynamicAlgBackpack$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DynamicAlgBackpack$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DynamicAlgBackpack$Artefact.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DynamicAlgBackpack$Artefact.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DynamicAlgBackpack.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DynamicAlgBackpack.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,9 +127,9 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="android.dex.compiler" />
   </component>
-  <component name="RunManager" selected="JUnit.DynamicAlgBackpackTest.testBackpackWithArtefactsAndCapacity">
+  <component name="RunManager" selected="JUnit.DynamicAlgBackpackTest">
     <configuration name="DynamicAlgBackpack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DynamicAlgBackpack" />
       <module name="qs" />
@@ -160,6 +156,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DynamicAlgBackpackTest.testBackpackWithArtefactsAndCapacityAndDecimalWeight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="qs" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DynamicAlgBackpackTest" />
+      <option name="METHOD_NAME" value="testBackpackWithArtefactsAndCapacityAndDecimalWeight" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DynamicAlgBackpackTest.testBackpackWithZeroOrNegativeValueOfArtefacts" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="qs" />
       <option name="PACKAGE_NAME" value="" />
@@ -170,23 +176,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GreedyAlgTest.testFillingElevenElementMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="qs" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="GreedyAlgTest" />
-      <option name="METHOD_NAME" value="testFillingElevenElementMap" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DynamicAlgBackpackTest.testBackpackWithArtefactsAndCapacity" />
         <item itemvalue="JUnit.DynamicAlgBackpackTest" />
+        <item itemvalue="JUnit.DynamicAlgBackpackTest.testBackpackWithArtefactsAndCapacityAndDecimalWeight" />
+        <item itemvalue="JUnit.DynamicAlgBackpackTest.testBackpackWithArtefactsAndCapacity" />
         <item itemvalue="Application.DynamicAlgBackpack" />
         <item itemvalue="JUnit.DynamicAlgBackpackTest.testBackpackWithZeroOrNegativeValueOfArtefacts" />
-        <item itemvalue="JUnit.GreedyAlgTest.testFillingElevenElementMap" />
       </list>
     </recent_temporary>
   </component>

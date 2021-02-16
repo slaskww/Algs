@@ -71,7 +71,7 @@ public class DynamicAlgBackpackTest {
     }
 
     @Test
-    public void testBackpackWithArtefactsAndCapacity(){
+    public void testBackpackWithArtefactsAndCapacityAndIntegerWeights(){
 
         List<DynamicAlgBackpack.Artefact> artefacts = Arrays.asList(
                 new DynamicAlgBackpack.Artefact("Water", 3000, 4 ),
@@ -90,6 +90,30 @@ public class DynamicAlgBackpackTest {
             add( new DynamicAlgBackpack.Artefact("IPod", 1000, 1 ));
             add( new DynamicAlgBackpack.Artefact("IPhone", 2000, 1 ));
              }}.toArray(),
+                backpack.findOptimalContents().toArray() );
+
+    }
+
+    @Test
+    public void testBackpackWithArtefactsAndCapacityAndDecimalWeights(){
+
+        List<DynamicAlgBackpack.Artefact> artefacts = Arrays.asList(
+                new DynamicAlgBackpack.Artefact("Water", 700, 0.5 ),
+                new DynamicAlgBackpack.Artefact("Food", 600, 0.5 ),
+                new DynamicAlgBackpack.Artefact("Book", 900, 1 ),
+                new DynamicAlgBackpack.Artefact("IPod", 900, 2 ),
+                new DynamicAlgBackpack.Artefact("IPhone", 800, 0.5 )
+
+        );
+
+        DynamicAlgBackpack backpack = new DynamicAlgBackpack(artefacts, 2, 0.5);
+
+
+        assertArrayEquals( new HashSet<DynamicAlgBackpack.Artefact>(){{
+                    add( new DynamicAlgBackpack.Artefact("Water", 700, 0.5 ));
+                    add( new DynamicAlgBackpack.Artefact("Book", 900, 1 ));
+                    add( new DynamicAlgBackpack.Artefact("IPhone", 800, 0.5 ));
+                }}.toArray(),
                 backpack.findOptimalContents().toArray() );
 
     }
