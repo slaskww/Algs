@@ -41,6 +41,10 @@ public class DynamicAlgBackpack implements DynamicAlg<DynamicAlgBackpack.Artefac
         if(backpackCapacity <= 0 ) throw new IllegalArgumentException("Backpack capacity value must be positive");
         if(artefacts.isEmpty()) throw new IllegalArgumentException("Number of artifacts cannot be zero");
 
+        artefacts.forEach( artefact -> {
+            if(artefact.weight % 0.5 != 0) throw new IllegalArgumentException("Artifact weight must be an integer or a decimal number divisible by 0.5");
+
+        } );
 
         for(int i = 0; i < artefacts.size(); i++){
 

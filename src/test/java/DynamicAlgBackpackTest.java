@@ -117,4 +117,21 @@ public class DynamicAlgBackpackTest {
                 backpack.findOptimalContents().toArray() );
 
     }
+
+    @Test
+    public void testBackpackWithArtefactsAndCapacityAndDecimalWeightsNotDivisibleByZeroPointFive(){
+
+        List<DynamicAlgBackpack.Artefact> artefacts = Arrays.asList(
+                new DynamicAlgBackpack.Artefact("Water", 700, 0.5 ),
+                new DynamicAlgBackpack.Artefact("Food", 600, 0.5 ),
+                new DynamicAlgBackpack.Artefact("Book", 900, 1.5 ),
+                new DynamicAlgBackpack.Artefact("IPod", 900, 2 ),
+                new DynamicAlgBackpack.Artefact("IPhone", 800, 0.7 )
+
+        );
+
+        DynamicAlgBackpack backpack = new DynamicAlgBackpack( artefacts, 4, 0.5 );
+
+        assertThrows( IllegalArgumentException.class, () -> backpack.findOptimalContents() );
+    }
 }
