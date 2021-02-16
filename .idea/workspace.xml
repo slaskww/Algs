@@ -130,7 +130,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="android.dex.compiler" />
   </component>
-  <component name="RunManager" selected="JUnit.DynamicAlgBackpackTest.testBackpackWithArtefactsAndCapacityAndDecimalWeightsNotDivisibleByZeroPointFive">
+  <component name="RunManager" selected="JUnit.DynamicAlgBackpackTest">
     <configuration name="DynamicAlgBackpack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DynamicAlgBackpack" />
       <module name="qs" />
@@ -179,8 +179,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DynamicAlgBackpackTest.testBackpackWithArtefactsAndCapacityAndDecimalWeightsNotDivisibleByZeroPointFive" />
         <item itemvalue="JUnit.DynamicAlgBackpackTest" />
+        <item itemvalue="JUnit.DynamicAlgBackpackTest.testBackpackWithArtefactsAndCapacityAndDecimalWeightsNotDivisibleByZeroPointFive" />
         <item itemvalue="JUnit.DynamicAlgBackpackTest.testBackpackWithArtefactsAndCapacityAndDecimalWeight" />
         <item itemvalue="JUnit.DynamicAlgBackpackTest.testBackpackWithArtefactsAndCapacity" />
         <item itemvalue="Application.DynamicAlgBackpack" />

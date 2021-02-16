@@ -26,13 +26,13 @@ public class DynamicAlgBackpack implements DynamicAlg<DynamicAlgBackpack.Artefac
         initializeBackpack(artefacts.size(), (backpackCapacity));
     }
 
-    public DynamicAlgBackpack(List<Artefact> artefacts, int backpackCapacity, double resolutionValue) {
+    public DynamicAlgBackpack(List<Artefact> artefacts, int backpackCapacity, ResolutionValue resolutionValue) {
         this.artefacts = artefacts;
         this.backpackCapacity = backpackCapacity;
-        this.resolutionValue = resolutionValue;
-        this.backpackResolution =  (int) (backpackCapacity/resolutionValue);
+        this.resolutionValue = resolutionValue.value;
+        this.backpackResolution =  (int) (backpackCapacity/resolutionValue.value);
 
-        initializeBackpack(artefacts.size(), (int) (backpackCapacity / resolutionValue));
+        initializeBackpack(artefacts.size(), (int) (backpackCapacity /resolutionValue.value));
     }
 
     @Override
@@ -103,6 +103,38 @@ public class DynamicAlgBackpack implements DynamicAlg<DynamicAlgBackpack.Artefac
     }
 
 
+
+    private void initializeBackpack(int rows, int cols){
+
+        if(cols < 0) cols = 0;
+        this.backpack = new BackpackElement[rows][cols];
+
+    }
+
+    public void printBackpack(){
+
+        StringBuilder builder = new StringBuilder();
+        builder.append( "\n" );
+
+        for (BackpackElement[] backpackElements : backpack) {
+
+            for (BackpackElement backpackElement : backpackElements) {
+
+                builder
+                        .append( "[" )
+                        .append( backpackElement.getArtefacts()
+                            .stream()
+                            .map( artefact -> artefact.name )
+                            .collect( Collectors.joining( ", " ) ) )
+                        .append( "]" );
+            }
+            builder.append( "\n" );
+        }
+
+        log.info( builder.toString() );
+    }
+
+
     @Data
     static class Artefact{
 
@@ -138,33 +170,15 @@ public class DynamicAlgBackpack implements DynamicAlg<DynamicAlgBackpack.Artefac
         private Set<Artefact> artefacts;
     }
 
-    private void initializeBackpack(int rows, int cols){
+     enum ResolutionValue{
 
-        if(cols < 0) cols = 0;
-        this.backpack = new BackpackElement[rows][cols];
+        INTEGER(1.0),
+        DECIMAL(0.5);
 
-    }
+        private final double value;
 
-    public void printBackpack(){
-
-        StringBuilder builder = new StringBuilder();
-        builder.append( "\n" );
-
-        for (BackpackElement[] backpackElements : backpack) {
-
-            for (BackpackElement backpackElement : backpackElements) {
-
-                builder
-                        .append( "[" )
-                        .append( backpackElement.getArtefacts()
-                            .stream()
-                            .map( artefact -> artefact.name )
-                            .collect( Collectors.joining( ", " ) ) )
-                        .append( "]" );
-            }
-            builder.append( "\n" );
+        ResolutionValue(double value) {
+            this.value = value;
         }
-
-        log.info( builder.toString() );
     }
 }

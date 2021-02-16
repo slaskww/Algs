@@ -82,7 +82,7 @@ public class DynamicAlgBackpackTest {
 
         );
 
-        DynamicAlgBackpack backpack = new DynamicAlgBackpack(artefacts, 4, 0.5);
+        DynamicAlgBackpack backpack = new DynamicAlgBackpack(artefacts, 4, DynamicAlgBackpack.ResolutionValue.INTEGER);
 
 
         assertArrayEquals( new HashSet<DynamicAlgBackpack.Artefact>(){{
@@ -106,7 +106,7 @@ public class DynamicAlgBackpackTest {
 
         );
 
-        DynamicAlgBackpack backpack = new DynamicAlgBackpack(artefacts, 2, 0.5);
+        DynamicAlgBackpack backpack = new DynamicAlgBackpack(artefacts, 2, DynamicAlgBackpack.ResolutionValue.DECIMAL);
 
 
         assertArrayEquals( new HashSet<DynamicAlgBackpack.Artefact>(){{
@@ -130,7 +130,7 @@ public class DynamicAlgBackpackTest {
 
         );
 
-        DynamicAlgBackpack backpack = new DynamicAlgBackpack( artefacts, 4, 0.5 );
+        DynamicAlgBackpack backpack = new DynamicAlgBackpack( artefacts, 4, DynamicAlgBackpack.ResolutionValue.DECIMAL);
 
         assertThrows( IllegalArgumentException.class, () -> backpack.findOptimalContents() );
     }
