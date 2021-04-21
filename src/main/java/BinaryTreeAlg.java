@@ -65,14 +65,46 @@ public class BinaryTreeAlg {
         }
     }
 
-    public  void removeBNote(BNode root, int value){
+    public BNode removeBNote(BNode root, int value){
 
+        if(root == null){
+            return null;
+        }
+
+        if(root.value == value){
+
+            if(root.left == null && root.right == null){
+                return null;
+            }
+            if (root.left == null){
+                return root.right;
+            }
+            if(root.right == null){
+                return root.left;
+            }
+
+            int val = findBiggestBNode(root.left);
+            root.left = removeBNote( root.left, val );
+            root.value = val;
+            return root;
+        }
+
+        if(root.value > value){
+            root.left = removeBNote( root.left, value );
+        } else {
+            root.right = removeBNote( root.right, value );
+        }
+        return root;
     }
 
     private BNode addRecursively(BNode curr, int value){
 
         if(curr == null){
             return new BNode( value );
+        }
+
+        if(curr.value == value){
+            return curr;
         }
 
         if(curr.value > value){
@@ -82,5 +114,9 @@ public class BinaryTreeAlg {
         }
 
         return curr;
+    }
+
+    private int findBiggestBNode(BNode root){
+        return root.right == null ? root.value : findBiggestBNode( root.right);
     }
 }

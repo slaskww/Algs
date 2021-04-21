@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f48091f6-5837-4b55-ac82-ea2d59b0e855" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BinaryTreeAlg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BinaryTreeAlg.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BinaryTreeAlgTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BinaryTreeAlgTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BinaryTreeAlg$BNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BinaryTreeAlg$BNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BinaryTreeAlg.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BinaryTreeAlg.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/BinaryTreeAlgTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/BinaryTreeAlgTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +133,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="android.dex.compiler" />
   </component>
-  <component name="RunManager" selected="JUnit.BinaryTreeAlgTest.shouldTellIfBNodeExists">
+  <component name="RunManager" selected="JUnit.BinaryTreeAlgTest.shouldRemoveNewBNode">
     <configuration name="BinaryTreeAlgTest.shouldAddNewBNode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="qs" />
       <option name="PACKAGE_NAME" value="" />
@@ -181,9 +185,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BinaryTreeAlgTest.shouldRemoveNewBNode" />
         <item itemvalue="JUnit.BinaryTreeAlgTest.shouldTellIfBNodeExists" />
         <item itemvalue="JUnit.BinaryTreeAlgTest.shouldSearchBNote" />
-        <item itemvalue="JUnit.BinaryTreeAlgTest.shouldRemoveNewBNode" />
         <item itemvalue="JUnit.BinaryTreeAlgTest.shouldAddNewBNode" />
         <item itemvalue="JUnit.DynamicStringComparatorTest" />
       </list>

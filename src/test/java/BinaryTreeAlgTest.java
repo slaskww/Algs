@@ -20,12 +20,20 @@ public class BinaryTreeAlgTest {
         BinaryTreeAlg btree = new BinaryTreeAlg();
         BinaryTreeAlg.BNode root = btree.addBNode( 23 );
         btree.addBNode(17 );
+        btree.addBNode(18 );
+        btree.addBNode(19 );
 
         assertTrue( btree.existBNode( root,17 ) );
+        assertTrue( btree.existBNode( root,18 ) );
+        assertTrue( btree.existBNode( root,19 ) );
 
         btree.removeBNote( root, 17 );
+        btree.removeBNote( root, 18 );
+        btree.removeBNote( root, 19 );
 
-        assertFalse( btree.existBNode( root,17 ) );
+        assertFalse(btree.existBNode( root,17 ) );
+        assertFalse(btree.existBNode( root,18 ) );
+        assertFalse(btree.existBNode( root,19 ) );
     }
 
     @Test
