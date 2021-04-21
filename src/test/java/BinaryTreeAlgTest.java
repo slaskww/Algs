@@ -29,6 +29,17 @@ public class BinaryTreeAlgTest {
     }
 
     @Test
+    public void shouldTellIfBNodeExists(){
+
+        BinaryTreeAlg btree = new BinaryTreeAlg();
+        BinaryTreeAlg.BNode root = btree.addBNode( 23 );
+        btree.addBNode( 17 );
+
+        assertTrue( btree.existBNode( root,17 ) );
+        assertFalse( btree.existBNode( root,77 ) );
+    }
+
+    @Test
     public void shouldSearchBNote(){
 
         BinaryTreeAlg btree = new BinaryTreeAlg();
@@ -38,4 +49,6 @@ public class BinaryTreeAlgTest {
 
         assertEquals( 17, addedBNode.getValue() );
     }
+
+
 }
