@@ -34,9 +34,19 @@ public class BinaryTreeAlg {
     }
 
 
-
     public  BNode searchBNode(BNode root, int value){
-        return null;
+
+        if(root == null){
+            return null;
+        }
+        if(root.value == value){
+            return root;
+        }
+        if(root.value > value){
+            return searchBNode( root.left, value );
+        } else{
+            return searchBNode(root.right, value);
+        }
     }
 
     public  boolean existBNode(BNode root, int value){
@@ -48,7 +58,7 @@ public class BinaryTreeAlg {
         if(root.value == value){
             return true;
         }
-        else if(root.value > value){
+        if(root.value > value){
             return existBNode( root.left, value );
         } else{
             return existBNode( root.right, value );
