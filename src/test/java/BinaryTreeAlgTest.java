@@ -9,8 +9,8 @@ public class BinaryTreeAlgTest {
 
 
         BinaryTreeAlg btree = new BinaryTreeAlg();
-        BinaryTreeAlg.BNode root = new BinaryTreeAlg.BNode(23);
-        btree.addBNode( root, 17 );
+        BinaryTreeAlg.BNode root =  btree.addBNode( 23 );
+        btree.addBNode(17 );
 
         assertTrue(btree.existBNode( root,17 ));
 
@@ -20,8 +20,8 @@ public class BinaryTreeAlgTest {
     void shouldRemoveNewBNode(){
 
         BinaryTreeAlg btree = new BinaryTreeAlg();
-        BinaryTreeAlg.BNode root = new BinaryTreeAlg.BNode( 23 );
-        btree.addBNode( root, 17 );
+        BinaryTreeAlg.BNode root = btree.addBNode( 23 );
+        btree.addBNode(17 );
 
         assertTrue( btree.existBNode( root,17 ) );
 
