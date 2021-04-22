@@ -1,7 +1,9 @@
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Slf4j
 public class BinaryTreeAlgTest {
 
     @Test
@@ -79,9 +81,6 @@ public class BinaryTreeAlgTest {
         btree.addBNode( 27 );
         btree.addBNode( 26 );
 
-
-        String pr = btree.printBTree( root, new StringBuilder(), new StringBuilder().append( " " ), 0).toString();
-        System.out.println("BTREE:\n" + pr);
-
+        log.info(btree.print( root));
     }
 }

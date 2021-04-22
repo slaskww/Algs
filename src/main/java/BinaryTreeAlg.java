@@ -122,24 +122,31 @@ public class BinaryTreeAlg {
         return root.right == null ? root.value : findBiggestBNode( root.right );
     }
 
-    public StringBuilder printBTree(BNode root, StringBuilder print, StringBuilder space, int pointer) {
+    public String print(BNode root){
 
-        if (root == null) return print;
+        StringBuilder print = new StringBuilder();
+        StringBuilder space = new StringBuilder().append( '\t' );
 
-        if (pointer == 0) print.append( root.value + "\n" );
 
+        if (root == null) return "Binary Tree is empty";
 
-        space.append( "|" + '\t' );
+        print.append("\n\t" + root.value + "\n" );
+        return printRecursively( root, print, space).toString() ;
+
+    }
+
+    private StringBuilder printRecursively(BNode root, StringBuilder print, StringBuilder space) {
+
         StringBuilder sp = new StringBuilder();
         sp.append( space.toString() );
 
         if (root.right != null) {
-            print.append( space.toString() + "|-" + root.right.value + "(" + pointer + ")" + "\n" );
-            print = printBTree( root.right, print, space, pointer + 1 );
+            print.append( space.toString() + "|-" + root.right.value +  "\n" );
+            print = printRecursively( root.right, print, space.append(  "|" + '\t'  ));
         }
         if (root.left != null) {
-            print.append( sp.toString() + "|-" + root.left.value + "(" + pointer + ")" + "\n" );
-            print = printBTree( root.left, print, sp, pointer + 1 );
+            print.append( sp.toString() + "|-" + root.left.value + "\n" );
+            print = printRecursively( root.left, print, sp.append( '\t'  ));
         }
 
         return print;
