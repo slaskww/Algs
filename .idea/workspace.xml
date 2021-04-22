@@ -133,7 +133,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="android.dex.compiler" />
   </component>
-  <component name="RunManager" selected="JUnit.BinaryTreeAlgTest.shouldRemoveNewBNode">
+  <component name="RunManager" selected="JUnit.BinaryTreeAlgTest.testPrintingBTree">
     <configuration name="BinaryTreeAlgTest.shouldAddNewBNode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="qs" />
       <option name="PACKAGE_NAME" value="" />
@@ -174,22 +174,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DynamicStringComparatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BinaryTreeAlgTest.testPrintingBTree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="qs" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DynamicStringComparatorTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="BinaryTreeAlgTest" />
+      <option name="METHOD_NAME" value="testPrintingBTree" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BinaryTreeAlgTest.testPrintingBTree" />
         <item itemvalue="JUnit.BinaryTreeAlgTest.shouldRemoveNewBNode" />
         <item itemvalue="JUnit.BinaryTreeAlgTest.shouldTellIfBNodeExists" />
         <item itemvalue="JUnit.BinaryTreeAlgTest.shouldSearchBNote" />
         <item itemvalue="JUnit.BinaryTreeAlgTest.shouldAddNewBNode" />
-        <item itemvalue="JUnit.DynamicStringComparatorTest" />
       </list>
     </recent_temporary>
   </component>

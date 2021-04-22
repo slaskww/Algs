@@ -1,19 +1,21 @@
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class BinaryTreeAlg {
 
-    private  BNode root;
+    private BNode root;
 
     @Data
     static
-    class BNode{
+    class BNode {
 
         private int value;
         private BNode left;
         private BNode right;
         private BNode father;
 
-        public BNode(int value){
+        public BNode(int value) {
             this.value = value;
             this.left = null;
             this.right = null;
@@ -22,9 +24,9 @@ public class BinaryTreeAlg {
 
     }
 
-    public BNode addBNode(int value){
-        if(this.root == null){
-            this.root = new BNode( value);
+    public BNode addBNode(int value) {
+        if (this.root == null) {
+            this.root = new BNode( value );
             return root;
         }
 
@@ -34,62 +36,62 @@ public class BinaryTreeAlg {
     }
 
 
-    public  BNode searchBNode(BNode root, int value){
+    public BNode searchBNode(BNode root, int value) {
 
-        if(root == null){
+        if (root == null) {
             return null;
         }
-        if(root.value == value){
+        if (root.value == value) {
             return root;
         }
-        if(root.value > value){
+        if (root.value > value) {
             return searchBNode( root.left, value );
-        } else{
-            return searchBNode(root.right, value);
+        } else {
+            return searchBNode( root.right, value );
         }
     }
 
-    public  boolean existBNode(BNode root, int value){
+    public boolean existBNode(BNode root, int value) {
 
-        if(root == null) {
+        if (root == null) {
             return false;
         }
 
-        if(root.value == value){
+        if (root.value == value) {
             return true;
         }
-        if(root.value > value){
+        if (root.value > value) {
             return existBNode( root.left, value );
-        } else{
+        } else {
             return existBNode( root.right, value );
         }
     }
 
-    public BNode removeBNote(BNode root, int value){
+    public BNode removeBNote(BNode root, int value) {
 
-        if(root == null){
+        if (root == null) {
             return null;
         }
 
-        if(root.value == value){
+        if (root.value == value) {
 
-            if(root.left == null && root.right == null){
+            if (root.left == null && root.right == null) {
                 return null;
             }
-            if (root.left == null){
+            if (root.left == null) {
                 return root.right;
             }
-            if(root.right == null){
+            if (root.right == null) {
                 return root.left;
             }
 
-            int val = findBiggestBNode(root.left);
+            int val = findBiggestBNode( root.left );
             root.left = removeBNote( root.left, val );
             root.value = val;
             return root;
         }
 
-        if(root.value > value){
+        if (root.value > value) {
             root.left = removeBNote( root.left, value );
         } else {
             root.right = removeBNote( root.right, value );
@@ -97,18 +99,18 @@ public class BinaryTreeAlg {
         return root;
     }
 
-    private BNode addRecursively(BNode curr, int value){
+    private BNode addRecursively(BNode curr, int value) {
 
-        if(curr == null){
+        if (curr == null) {
             return new BNode( value );
         }
 
-        if(curr.value == value){
+        if (curr.value == value) {
             return curr;
         }
 
-        if(curr.value > value){
-          curr.left =  addRecursively( curr.left, value );
+        if (curr.value > value) {
+            curr.left = addRecursively( curr.left, value );
         } else {
             curr.right = addRecursively( curr.right, value );
         }
@@ -116,7 +118,30 @@ public class BinaryTreeAlg {
         return curr;
     }
 
-    private int findBiggestBNode(BNode root){
-        return root.right == null ? root.value : findBiggestBNode( root.right);
+    private int findBiggestBNode(BNode root) {
+        return root.right == null ? root.value : findBiggestBNode( root.right );
+    }
+
+    public StringBuilder printBTree(BNode root, StringBuilder print, StringBuilder space, int pointer) {
+
+        if (root == null) return print;
+
+        if (pointer == 0) print.append( root.value + "\n" );
+
+
+        space.append( "|" + '\t' );
+        StringBuilder sp = new StringBuilder();
+        sp.append( space.toString() );
+
+        if (root.right != null) {
+            print.append( space.toString() + "|-" + root.right.value + "(" + pointer + ")" + "\n" );
+            print = printBTree( root.right, print, space, pointer + 1 );
+        }
+        if (root.left != null) {
+            print.append( sp.toString() + "|-" + root.left.value + "(" + pointer + ")" + "\n" );
+            print = printBTree( root.left, print, sp, pointer + 1 );
+        }
+
+        return print;
     }
 }

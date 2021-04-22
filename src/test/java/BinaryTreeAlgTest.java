@@ -59,4 +59,29 @@ public class BinaryTreeAlgTest {
     }
 
 
+    @Test
+    public void testPrintingBTree(){
+
+        BinaryTreeAlg btree = new BinaryTreeAlg();
+        BinaryTreeAlg.BNode root = btree.addBNode( 23 );
+        btree.addBNode( 15 );
+        btree.addBNode( 14 );
+        btree.addBNode( 16 );
+        btree.addBNode( 17 );
+        btree.addBNode( 18 );
+        btree.addBNode( 19 );
+        btree.addBNode( 31 );
+        btree.addBNode( 33);
+        btree.addBNode( 34 );
+        btree.addBNode( 30 );
+        btree.addBNode( 29 );
+        btree.addBNode( 28 );
+        btree.addBNode( 27 );
+        btree.addBNode( 26 );
+
+
+        String pr = btree.printBTree( root, new StringBuilder(), new StringBuilder().append( " " ), 0).toString();
+        System.out.println("BTREE:\n" + pr);
+
+    }
 }
