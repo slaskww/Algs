@@ -90,4 +90,12 @@ public class BinaryTreeAlgTest {
 
         log.info(btree.print( root));
     }
+
+    @Test
+    public void testPrintingOfEmptyBTree(){
+
+        BinaryTreeAlg btree = new BinaryTreeAlg();
+
+        assertThrows( IllegalArgumentException.class, () -> btree.print( null ) );
+    }
 }

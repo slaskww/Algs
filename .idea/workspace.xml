@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f48091f6-5837-4b55-ac82-ea2d59b0e855" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BinaryTreeAlg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BinaryTreeAlg.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BinaryTreeAlgTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BinaryTreeAlgTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/BinaryTreeAlg.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BinaryTreeAlg.class" afterDir="false" />
@@ -131,17 +132,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="android.dex.compiler" />
   </component>
-  <component name="RunManager" selected="JUnit.BinaryTreeAlgTest.testPrintingBTree">
-    <configuration name="BinaryTreeAlgTest.shouldAddNewBNode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="qs" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BinaryTreeAlgTest" />
-      <option name="METHOD_NAME" value="shouldAddNewBNode" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.BinaryTreeAlgTest.testPrintingOfEmptyBTree">
     <configuration name="BinaryTreeAlgTest.shouldRemoveNewBNode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="qs" />
       <option name="PACKAGE_NAME" value="" />
@@ -182,13 +173,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BinaryTreeAlgTest.testPrintingOfEmptyBTree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="qs" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BinaryTreeAlgTest" />
+      <option name="METHOD_NAME" value="testPrintingOfEmptyBTree" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BinaryTreeAlgTest.testPrintingOfEmptyBTree" />
         <item itemvalue="JUnit.BinaryTreeAlgTest.testPrintingBTree" />
         <item itemvalue="JUnit.BinaryTreeAlgTest.shouldRemoveNewBNode" />
         <item itemvalue="JUnit.BinaryTreeAlgTest.shouldTellIfBNodeExists" />
         <item itemvalue="JUnit.BinaryTreeAlgTest.shouldSearchBNote" />
-        <item itemvalue="JUnit.BinaryTreeAlgTest.shouldAddNewBNode" />
       </list>
     </recent_temporary>
   </component>

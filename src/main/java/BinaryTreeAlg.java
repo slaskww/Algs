@@ -124,32 +124,56 @@ public class BinaryTreeAlg {
 
     public String print(BNode root){
 
-        StringBuilder print = new StringBuilder();
-        StringBuilder space = new StringBuilder().append( '\t' );
+        StringBuilder printedBTree = new StringBuilder();
+        StringBuilder padding = new StringBuilder().append( '\t' );
 
 
-        if (root == null) return "Binary Tree is empty";
+        if (root == null) throw new IllegalArgumentException("Binary Tree is empty");
 
-        print.append("\n  " + root.value + "\n" );
-        return printRecursively( root, print, space).toString() ;
+        printedBTree
+                .append( "\n  " )
+                .append( root.value )
+                .append( "\n" );
+        return printRecursively( root, printedBTree, padding).toString() ;
 
     }
 
-    private StringBuilder printRecursively(BNode root, StringBuilder print, StringBuilder space) {
+    private StringBuilder printRecursively(BNode root, StringBuilder printedBTree, StringBuilder padding) {
 
+        String singleTwig = "└──";
+        String doubleTwig = "├──";
+        String linker = "│";
+        String singleSpace = "\t";
+        String newLine = "\n";
 
         if (root.right != null && root.left == null) {
-            print.append( space.toString() + "└──" + root.right.value +  "\n" );
-            print = printRecursively( root.right, print, new StringBuilder().append(space).append('\t'  ));
+            printedBTree
+                    .append( padding)
+                    .append(singleTwig )
+                    .append( root.right.value )
+                    .append( newLine);
+            printedBTree = printRecursively( root.right, printedBTree, new StringBuilder().append(padding).append(singleSpace));
         } else if (root.right != null) {
-            print.append( space.toString() + "├──" + root.right.value +  "\n" );
-            print = printRecursively( root.right, print, new StringBuilder().append(space).append(  "│" + '\t'  ));
+            printedBTree
+                    .append( padding)
+                    .append(doubleTwig )
+                    .append( root.right.value )
+                    .append(newLine);
+            printedBTree = printRecursively( root.right, printedBTree, new StringBuilder().append(padding).append( linker + singleSpace ));
         }
         if (root.left != null) {
-            print.append( space.toString() + "└──" + root.left.value + "\n" );
-            print = printRecursively( root.left, print, new StringBuilder().append(space).append( '\t'  ));
+            printedBTree
+                    .append( padding)
+                    .append(singleTwig)
+                    .append( root.left.value )
+                    .append(newLine);
+            printedBTree = printRecursively( root.left, printedBTree, new StringBuilder().append(padding).append(singleSpace ));
         }
 
-        return print;
+        return printedBTree;
+    }
+
+    public void balanceBTree(BNode root){
+
     }
 }
