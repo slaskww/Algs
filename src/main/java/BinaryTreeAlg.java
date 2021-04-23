@@ -130,23 +130,24 @@ public class BinaryTreeAlg {
 
         if (root == null) return "Binary Tree is empty";
 
-        print.append("\n\t" + root.value + "\n" );
+        print.append("\n  " + root.value + "\n" );
         return printRecursively( root, print, space).toString() ;
 
     }
 
     private StringBuilder printRecursively(BNode root, StringBuilder print, StringBuilder space) {
 
-        StringBuilder sp = new StringBuilder();
-        sp.append( space.toString() );
 
-        if (root.right != null) {
-            print.append( space.toString() + "|-" + root.right.value +  "\n" );
-            print = printRecursively( root.right, print, space.append(  "|" + '\t'  ));
+        if (root.right != null && root.left == null) {
+            print.append( space.toString() + "└──" + root.right.value +  "\n" );
+            print = printRecursively( root.right, print, new StringBuilder().append(space).append('\t'  ));
+        } else if (root.right != null) {
+            print.append( space.toString() + "├──" + root.right.value +  "\n" );
+            print = printRecursively( root.right, print, new StringBuilder().append(space).append(  "│" + '\t'  ));
         }
         if (root.left != null) {
-            print.append( sp.toString() + "|-" + root.left.value + "\n" );
-            print = printRecursively( root.left, print, sp.append( '\t'  ));
+            print.append( space.toString() + "└──" + root.left.value + "\n" );
+            print = printRecursively( root.left, print, new StringBuilder().append(space).append( '\t'  ));
         }
 
         return print;
