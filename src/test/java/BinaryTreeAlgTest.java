@@ -141,7 +141,35 @@ public class BinaryTreeAlgTest {
         btree.removeBNote( root, 26 );
         btree.removeBNote( root, 27);
 
-        assertEquals( 5, btree.getSize() );}
+        assertEquals( 5, btree.getSize() );
+    }
+
+    @Test
+    public void testLevelAttribute(){
+
+        BinaryTreeAlg btree = new BinaryTreeAlg();
+        BinaryTreeAlg.BNode root = btree.addBNode( 23 );
+
+        assertEquals( 0, root.getLevel() );
+
+        btree.addBNode( 22 );
+        BinaryTreeAlg.BNode addedNode = btree.searchBNode( root,22 );
+
+        assertEquals( 1, addedNode.getLevel() );
+
+        btree.addBNode( 20 );
+        addedNode = btree.searchBNode(root, 20);
+
+        assertEquals( 2, addedNode.getLevel() );
+
+        btree.addBNode( 21 );
+        addedNode = btree.searchBNode( root, 21 );
 
 
+        btree.addBNode( 24 );
+        addedNode = btree.searchBNode( root, 24 );
+
+        assertEquals( 1, addedNode.getLevel() );
+
+    }
 }

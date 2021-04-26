@@ -31,6 +31,7 @@ public class BinaryTreeAlg {
     public BNode addBNode(int value) {
         if (this.root == null) {
             this.root = new BNode( value );
+            this.root.level = 0;
             this.size = 1;
             return root;
         }
@@ -118,8 +119,10 @@ public class BinaryTreeAlg {
 
         if (curr.value > value) {
             curr.left = addRecursively( curr.left, value );
+            curr.left.level = curr.level + 1;
         } else {
             curr.right = addRecursively( curr.right, value );
+            curr.right.level = curr.level + 1;
         }
 
         return curr;

@@ -133,17 +133,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="android.dex.compiler" />
   </component>
-  <component name="RunManager" selected="JUnit.BinaryTreeAlgTest.testBTreeSizeAfterAddingNewNodes">
-    <configuration name="BinaryTreeAlgTest.shouldRemoveNewBNode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="qs" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BinaryTreeAlgTest" />
-      <option name="METHOD_NAME" value="shouldRemoveNewBNode" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.BinaryTreeAlgTest.testLevelAttribute">
     <configuration name="BinaryTreeAlgTest.testBTreeSizeAfterAddingNewNodes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="qs" />
       <option name="PACKAGE_NAME" value="" />
@@ -159,6 +149,16 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="BinaryTreeAlgTest" />
       <option name="METHOD_NAME" value="testBTreeSizeAfterRemovingNodes" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BinaryTreeAlgTest.testLevelAttribute" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="qs" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BinaryTreeAlgTest" />
+      <option name="METHOD_NAME" value="testLevelAttribute" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -186,11 +186,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BinaryTreeAlgTest.testLevelAttribute" />
         <item itemvalue="JUnit.BinaryTreeAlgTest.testBTreeSizeAfterAddingNewNodes" />
         <item itemvalue="JUnit.BinaryTreeAlgTest.testBTreeSizeAfterRemovingNodes" />
         <item itemvalue="JUnit.BinaryTreeAlgTest.testPrintingOfEmptyBTree" />
         <item itemvalue="JUnit.BinaryTreeAlgTest.testPrintingBTree" />
-        <item itemvalue="JUnit.BinaryTreeAlgTest.shouldRemoveNewBNode" />
       </list>
     </recent_temporary>
   </component>
@@ -283,20 +283,6 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="14" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/BinaryTreeAlg.java</url>
-          <line>9</line>
-          <properties field="size" class="BinaryTreeAlg" />
-          <option name="timeStamp" value="75" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/BinaryTreeAlg.java</url>
-          <line>74</line>
-          <properties class="BinaryTreeAlg" method="removeBNote">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
