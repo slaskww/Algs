@@ -1,10 +1,13 @@
 import lombok.Data;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
+@Getter
 public class BinaryTreeAlg {
 
     private BNode root;
+    private int size;
 
     @Data
     static
@@ -14,6 +17,7 @@ public class BinaryTreeAlg {
         private BNode left;
         private BNode right;
         private BNode father;
+        private int level;
 
         public BNode(int value) {
             this.value = value;
@@ -27,6 +31,7 @@ public class BinaryTreeAlg {
     public BNode addBNode(int value) {
         if (this.root == null) {
             this.root = new BNode( value );
+            this.size = 1;
             return root;
         }
 
@@ -74,6 +79,7 @@ public class BinaryTreeAlg {
         }
 
         if (root.value == value) {
+            this.size--;
 
             if (root.left == null && root.right == null) {
                 return null;
@@ -102,6 +108,7 @@ public class BinaryTreeAlg {
     private BNode addRecursively(BNode curr, int value) {
 
         if (curr == null) {
+            this.size++;
             return new BNode( value );
         }
 

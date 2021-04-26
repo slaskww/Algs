@@ -98,4 +98,50 @@ public class BinaryTreeAlgTest {
 
         assertThrows( IllegalArgumentException.class, () -> btree.print( null ) );
     }
+
+    @Test
+    public void testBTreeSizeAfterAddingNewNodes(){
+
+        BinaryTreeAlg btree = new BinaryTreeAlg();
+        BinaryTreeAlg.BNode root = btree.addBNode( 23 );
+        btree.addBNode( 24 );
+        btree.addBNode( 25 );
+        btree.addBNode( 26 );
+        btree.addBNode( 27 );
+        btree.addBNode( 28 );
+        btree.addBNode( 29 );
+        btree.addBNode( 30 );
+
+        assertEquals( 8, btree.getSize());
+
+        btree.addBNode( 30 );
+
+        assertEquals( 8, btree.getSize());
+    }
+
+    @Test
+    public void testBTreeSizeAfterRemovingNodes(){
+
+        BinaryTreeAlg btree = new BinaryTreeAlg();
+        BinaryTreeAlg.BNode root = btree.addBNode( 23 );
+        btree.addBNode( 24 );
+        btree.addBNode( 25 );
+        btree.addBNode( 26 );
+        btree.addBNode( 27 );
+        btree.addBNode( 28 );
+        btree.addBNode( 29 );
+        btree.addBNode( 30 );
+        btree.removeBNote( root, 25 );
+        btree.removeBNote( root, 26 );
+        btree.removeBNote( root, 27);
+
+        assertEquals( 5, btree.getSize() );
+
+        btree.removeBNote( root, 25 );
+        btree.removeBNote( root, 26 );
+        btree.removeBNote( root, 27);
+
+        assertEquals( 5, btree.getSize() );}
+
+
 }
