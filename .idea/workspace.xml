@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BinaryTreeAlg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BinaryTreeAlg.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BinaryTreeAlgTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BinaryTreeAlgTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BinaryTreeAlg$BNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BinaryTreeAlg$BNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/BinaryTreeAlg.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BinaryTreeAlg.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/BinaryTreeAlgTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/BinaryTreeAlgTest.class" afterDir="false" />
     </list>
@@ -133,7 +132,26 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="android.dex.compiler" />
   </component>
-  <component name="RunManager" selected="JUnit.BinaryTreeAlgTest.testLevelAttribute">
+  <component name="RunManager" selected="JUnit.BinaryTreeAlgTest">
+    <configuration name="BinaryTreeAlgTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="qs" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BinaryTreeAlgTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BinaryTreeAlgTest.shouldSearchBNote" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="qs" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BinaryTreeAlgTest" />
+      <option name="METHOD_NAME" value="shouldSearchBNote" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BinaryTreeAlgTest.testBTreeSizeAfterAddingNewNodes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="qs" />
       <option name="PACKAGE_NAME" value="" />
@@ -164,33 +182,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BinaryTreeAlgTest.testPrintingBTree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="qs" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BinaryTreeAlgTest" />
-      <option name="METHOD_NAME" value="testPrintingBTree" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BinaryTreeAlgTest.testPrintingOfEmptyBTree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="qs" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BinaryTreeAlgTest" />
-      <option name="METHOD_NAME" value="testPrintingOfEmptyBTree" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BinaryTreeAlgTest" />
         <item itemvalue="JUnit.BinaryTreeAlgTest.testLevelAttribute" />
+        <item itemvalue="JUnit.BinaryTreeAlgTest.shouldSearchBNote" />
         <item itemvalue="JUnit.BinaryTreeAlgTest.testBTreeSizeAfterAddingNewNodes" />
         <item itemvalue="JUnit.BinaryTreeAlgTest.testBTreeSizeAfterRemovingNodes" />
-        <item itemvalue="JUnit.BinaryTreeAlgTest.testPrintingOfEmptyBTree" />
-        <item itemvalue="JUnit.BinaryTreeAlgTest.testPrintingBTree" />
       </list>
     </recent_temporary>
   </component>

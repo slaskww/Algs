@@ -13,7 +13,7 @@ public class BinaryTreeAlgTest {
         BinaryTreeAlg.BNode root =  btree.addBNode( 23 );
         btree.addBNode(17 );
 
-        assertTrue(btree.existBNode( root,17 ));
+        assertTrue(btree.existBNode(17 ));
     }
 
     @Test
@@ -25,17 +25,17 @@ public class BinaryTreeAlgTest {
         btree.addBNode(18 );
         btree.addBNode(19 );
 
-        assertTrue( btree.existBNode( root,17 ) );
-        assertTrue( btree.existBNode( root,18 ) );
-        assertTrue( btree.existBNode( root,19 ) );
+        assertTrue( btree.existBNode(17 ) );
+        assertTrue( btree.existBNode(18 ) );
+        assertTrue( btree.existBNode( 19 ) );
 
-        btree.removeBNote( root, 17 );
-        btree.removeBNote( root, 18 );
-        btree.removeBNote( root, 19 );
+        btree.removeBNode(17 );
+        btree.removeBNode(18 );
+        btree.removeBNode(19 );
 
-        assertFalse(btree.existBNode( root,17 ) );
-        assertFalse(btree.existBNode( root,18 ) );
-        assertFalse(btree.existBNode( root,19 ) );
+        assertFalse(btree.existBNode(17 ) );
+        assertFalse(btree.existBNode( 18 ) );
+        assertFalse(btree.existBNode(19 ) );
     }
 
     @Test
@@ -45,8 +45,8 @@ public class BinaryTreeAlgTest {
         BinaryTreeAlg.BNode root = btree.addBNode( 23 );
         btree.addBNode( 17 );
 
-        assertTrue( btree.existBNode( root,17 ) );
-        assertFalse( btree.existBNode( root,77 ) );
+        assertTrue( btree.existBNode( 17 ) );
+        assertFalse( btree.existBNode(77 ) );
     }
 
     @Test
@@ -55,7 +55,7 @@ public class BinaryTreeAlgTest {
         BinaryTreeAlg btree = new BinaryTreeAlg();
         BinaryTreeAlg.BNode root = btree.addBNode( 23 );
         btree.addBNode( 17 );
-        BinaryTreeAlg.BNode addedBNode = btree.searchBNode( root, 17 );
+        BinaryTreeAlg.BNode addedBNode = btree.searchBNode(17 );
 
         assertEquals( 17, addedBNode.getValue() );
     }
@@ -131,15 +131,15 @@ public class BinaryTreeAlgTest {
         btree.addBNode( 28 );
         btree.addBNode( 29 );
         btree.addBNode( 30 );
-        btree.removeBNote( root, 25 );
-        btree.removeBNote( root, 26 );
-        btree.removeBNote( root, 27);
+        btree.removeBNode( 25);
+        btree.removeBNode( 26);
+        btree.removeBNode( 27);
 
         assertEquals( 5, btree.getSize() );
 
-        btree.removeBNote( root, 25 );
-        btree.removeBNote( root, 26 );
-        btree.removeBNote( root, 27);
+        btree.removeBNode( 25 );
+        btree.removeBNode( 26 );
+        btree.removeBNode( 27);
 
         assertEquals( 5, btree.getSize() );
     }
@@ -153,21 +153,22 @@ public class BinaryTreeAlgTest {
         assertEquals( 0, root.getLevel() );
 
         btree.addBNode( 22 );
-        BinaryTreeAlg.BNode addedNode = btree.searchBNode( root,22 );
+        BinaryTreeAlg.BNode addedNode = btree.searchBNode(22 );
 
         assertEquals( 1, addedNode.getLevel() );
 
         btree.addBNode( 20 );
-        addedNode = btree.searchBNode(root, 20);
+        addedNode = btree.searchBNode(20);
 
         assertEquals( 2, addedNode.getLevel() );
 
         btree.addBNode( 21 );
-        addedNode = btree.searchBNode( root, 21 );
+        addedNode = btree.searchBNode(21 );
 
+        assertEquals( 3, addedNode.getLevel() );
 
         btree.addBNode( 24 );
-        addedNode = btree.searchBNode( root, 24 );
+        addedNode = btree.searchBNode(24 );
 
         assertEquals( 1, addedNode.getLevel() );
 

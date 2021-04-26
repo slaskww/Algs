@@ -41,8 +41,12 @@ public class BinaryTreeAlg {
 
     }
 
+    public BNode searchBNode(int value){
 
-    public BNode searchBNode(BNode root, int value) {
+      return  searchBNodeRecursively( this.root, value );
+    }
+
+    private BNode searchBNodeRecursively(BNode root, int value) {
 
         if (root == null) {
             return null;
@@ -51,13 +55,17 @@ public class BinaryTreeAlg {
             return root;
         }
         if (root.value > value) {
-            return searchBNode( root.left, value );
+            return searchBNodeRecursively( root.left, value );
         } else {
-            return searchBNode( root.right, value );
+            return searchBNodeRecursively( root.right, value );
         }
     }
 
-    public boolean existBNode(BNode root, int value) {
+    public boolean existBNode(int value){
+        return existBNodeRecursively(this.root, value );
+    }
+
+    private boolean existBNodeRecursively(BNode root, int value) {
 
         if (root == null) {
             return false;
@@ -67,13 +75,18 @@ public class BinaryTreeAlg {
             return true;
         }
         if (root.value > value) {
-            return existBNode( root.left, value );
+            return existBNodeRecursively( root.left, value );
         } else {
-            return existBNode( root.right, value );
+            return existBNodeRecursively( root.right, value );
         }
     }
 
-    public BNode removeBNote(BNode root, int value) {
+    public BNode removeBNode(int value){
+
+        return removeBNoteRecursively(this.root, value);
+    }
+
+    private BNode removeBNoteRecursively(BNode root, int value) {
 
         if (root == null) {
             return null;
@@ -93,15 +106,15 @@ public class BinaryTreeAlg {
             }
 
             int val = findBiggestBNode( root.left );
-            root.left = removeBNote( root.left, val );
+            root.left = removeBNoteRecursively( root.left, val );
             root.value = val;
             return root;
         }
 
         if (root.value > value) {
-            root.left = removeBNote( root.left, value );
+            root.left = removeBNoteRecursively( root.left, value );
         } else {
-            root.right = removeBNote( root.right, value );
+            root.right = removeBNoteRecursively( root.right, value );
         }
         return root;
     }
