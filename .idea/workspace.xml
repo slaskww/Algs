@@ -132,22 +132,12 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="android.dex.compiler" />
   </component>
-  <component name="RunManager" selected="JUnit.BinaryTreeAlgTest">
+  <component name="RunManager" selected="JUnit.BinaryTreeAlgTest.testBalanceBTree">
     <configuration name="BinaryTreeAlgTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="qs" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="BinaryTreeAlgTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BinaryTreeAlgTest.shouldSearchBNote" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="qs" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BinaryTreeAlgTest" />
-      <option name="METHOD_NAME" value="shouldSearchBNote" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -162,11 +152,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BinaryTreeAlgTest.testBTreeSizeAfterRemovingNodes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BinaryTreeAlgTest.testBalanceBTree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="qs" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="BinaryTreeAlgTest" />
-      <option name="METHOD_NAME" value="testBTreeSizeAfterRemovingNodes" />
+      <option name="METHOD_NAME" value="testBalanceBTree" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -182,13 +172,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BinaryTreeAlgTest.testPrintingBTree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="qs" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BinaryTreeAlgTest" />
+      <option name="METHOD_NAME" value="testPrintingBTree" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BinaryTreeAlgTest.testBalanceBTree" />
+        <item itemvalue="JUnit.BinaryTreeAlgTest.testBTreeSizeAfterAddingNewNodes" />
+        <item itemvalue="JUnit.BinaryTreeAlgTest.testPrintingBTree" />
         <item itemvalue="JUnit.BinaryTreeAlgTest" />
         <item itemvalue="JUnit.BinaryTreeAlgTest.testLevelAttribute" />
-        <item itemvalue="JUnit.BinaryTreeAlgTest.shouldSearchBNote" />
-        <item itemvalue="JUnit.BinaryTreeAlgTest.testBTreeSizeAfterAddingNewNodes" />
-        <item itemvalue="JUnit.BinaryTreeAlgTest.testBTreeSizeAfterRemovingNodes" />
       </list>
     </recent_temporary>
   </component>
@@ -281,6 +281,16 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="14" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/BinaryTreeAlg.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="113" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/BinaryTreeAlg.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="114" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

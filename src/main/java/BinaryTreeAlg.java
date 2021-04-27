@@ -46,44 +46,112 @@ public class BinaryTreeAlg {
       return  searchBNodeRecursively( this.root, value );
     }
 
-    private BNode searchBNodeRecursively(BNode root, int value) {
 
-        if (root == null) {
-            return null;
-        }
-        if (root.value == value) {
-            return root;
-        }
-        if (root.value > value) {
-            return searchBNodeRecursively( root.left, value );
-        } else {
-            return searchBNodeRecursively( root.right, value );
-        }
-    }
 
     public boolean existBNode(int value){
         return existBNodeRecursively(this.root, value );
     }
 
-    private boolean existBNodeRecursively(BNode root, int value) {
 
-        if (root == null) {
-            return false;
-        }
-
-        if (root.value == value) {
-            return true;
-        }
-        if (root.value > value) {
-            return existBNodeRecursively( root.left, value );
-        } else {
-            return existBNodeRecursively( root.right, value );
-        }
-    }
 
     public BNode removeBNode(int value){
 
         return removeBNoteRecursively(this.root, value);
+    }
+
+
+
+
+    public String print(BNode root){
+
+        StringBuilder printedBTree = new StringBuilder();
+        StringBuilder padding = new StringBuilder().append( '\t' );
+
+
+        if (root == null) throw new IllegalArgumentException("Binary Tree is empty");
+
+        printedBTree
+                .append( "\n  " )
+                .append( root.value )
+                .append( "\n" );
+        return printRecursively( root, printedBTree, padding).toString() ;
+
+    }
+
+    public BNode balanceBTree(BNode root){
+
+        if(root == null) return null;
+
+       int left = countNodes(root.left);
+       int right = countNodes(root.right );
+
+        while(Math.abs(left - right) > 1){
+
+           if(left < right){
+               BNode currLeft = null;
+               if(root.left != null) currLeft = root.left;
+               root.left = new BNode(root.value);
+               root.left.value = root.value;
+               root.left.right = root.right.left;
+               root.left.left = currLeft;
+               root.right.left = null;
+               root.value = root.right.value;
+               root.right = root.right.right;
+           }
+            else{
+                BNode currRight = null;
+                if( root.right != null)  currRight = root.right;
+                root.right = new BNode(0);
+                root.right.value = root.value;
+               root.right.left = root.left.right;
+               root.right.right = currRight;
+               root.left.right = null;
+               root.value = root.left.value;
+               root.left = root.left.left;
+           }
+
+            root.left = balanceBTree( root.left );
+            root.right = balanceBTree( root.right );
+
+            left = countNodes(root.left);
+            right = countNodes(root.right );
+
+       }
+
+        return root;
+    }
+
+    private int countNodes(BNode node){
+
+        if(node == null) return 0;
+        if(node.left == null && node.right == null) return 1;
+
+        int leftNodes = countNodes( node.left );
+        int rightNodes = countNodes( node.right );
+
+        return leftNodes > rightNodes ? leftNodes + 1 : rightNodes + 1;
+    }
+
+    private BNode addRecursively(BNode curr, int value) {
+
+        if (curr == null) {
+            this.size++;
+            return new BNode( value );
+        }
+
+        if (curr.value == value) {
+            return curr;
+        }
+
+        if (curr.value > value) {
+            curr.left = addRecursively( curr.left, value );
+            curr.left.level = curr.level + 1;
+        } else {
+            curr.right = addRecursively( curr.right, value );
+            curr.right.level = curr.level + 1;
+        }
+
+        return curr;
     }
 
     private BNode removeBNoteRecursively(BNode root, int value) {
@@ -119,46 +187,41 @@ public class BinaryTreeAlg {
         return root;
     }
 
-    private BNode addRecursively(BNode curr, int value) {
-
-        if (curr == null) {
-            this.size++;
-            return new BNode( value );
-        }
-
-        if (curr.value == value) {
-            return curr;
-        }
-
-        if (curr.value > value) {
-            curr.left = addRecursively( curr.left, value );
-            curr.left.level = curr.level + 1;
-        } else {
-            curr.right = addRecursively( curr.right, value );
-            curr.right.level = curr.level + 1;
-        }
-
-        return curr;
-    }
 
     private int findBiggestBNode(BNode root) {
         return root.right == null ? root.value : findBiggestBNode( root.right );
     }
 
-    public String print(BNode root){
 
-        StringBuilder printedBTree = new StringBuilder();
-        StringBuilder padding = new StringBuilder().append( '\t' );
+    private BNode searchBNodeRecursively(BNode root, int value) {
 
+        if (root == null) {
+            return null;
+        }
+        if (root.value == value) {
+            return root;
+        }
+        if (root.value > value) {
+            return searchBNodeRecursively( root.left, value );
+        } else {
+            return searchBNodeRecursively( root.right, value );
+        }
+    }
 
-        if (root == null) throw new IllegalArgumentException("Binary Tree is empty");
+    private boolean existBNodeRecursively(BNode root, int value) {
 
-        printedBTree
-                .append( "\n  " )
-                .append( root.value )
-                .append( "\n" );
-        return printRecursively( root, printedBTree, padding).toString() ;
+        if (root == null) {
+            return false;
+        }
 
+        if (root.value == value) {
+            return true;
+        }
+        if (root.value > value) {
+            return existBNodeRecursively( root.left, value );
+        } else {
+            return existBNodeRecursively( root.right, value );
+        }
     }
 
     private StringBuilder printRecursively(BNode root, StringBuilder printedBTree, StringBuilder padding) {
@@ -196,7 +259,5 @@ public class BinaryTreeAlg {
         return printedBTree;
     }
 
-    public void balanceBTree(BNode root){
 
-    }
 }

@@ -89,6 +89,7 @@ public class BinaryTreeAlgTest {
         btree.addBNode( 25 );
 
         log.info(btree.print( root));
+        btree.balanceBTree( root );
     }
 
     @Test
@@ -112,11 +113,38 @@ public class BinaryTreeAlgTest {
         btree.addBNode( 29 );
         btree.addBNode( 30 );
 
+
         assertEquals( 8, btree.getSize());
 
         btree.addBNode( 30 );
 
         assertEquals( 8, btree.getSize());
+    }
+
+    @Test
+    public void testBalanceBTree(){
+
+        BinaryTreeAlg btree = new BinaryTreeAlg();
+        BinaryTreeAlg.BNode root = btree.addBNode( 23 );
+        btree.addBNode( 24 );
+        btree.addBNode( 25 );
+        btree.addBNode( 26 );
+        btree.addBNode( 27 );
+        btree.addBNode( 28 );
+        btree.addBNode( 29 );
+        btree.addBNode( 30 );
+        btree.addBNode( 31 );
+        btree.addBNode( 22 );
+        btree.addBNode( 21 );
+        btree.addBNode( 20 );
+        btree.addBNode( 19 );
+        btree.addBNode( 18 );
+        btree.addBNode( 17 );
+
+
+        log.info( btree.print( root ) );
+        btree.balanceBTree( root );
+        log.info( btree.print( root ) );
     }
 
     @Test
