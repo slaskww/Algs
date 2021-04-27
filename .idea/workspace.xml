@@ -281,16 +281,6 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="14" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/BinaryTreeAlg.java</url>
-          <line>84</line>
-          <option name="timeStamp" value="113" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/BinaryTreeAlg.java</url>
-          <line>85</line>
-          <option name="timeStamp" value="114" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

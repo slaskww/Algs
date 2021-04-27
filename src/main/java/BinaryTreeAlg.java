@@ -85,7 +85,7 @@ public class BinaryTreeAlg {
        int left = countNodes(root.left);
        int right = countNodes(root.right );
 
-        while(Math.abs(left - right) > 1){
+        while(Math.abs(left - right) > 1 || Math.log10(size)/Math.log10( 2 ) + 1 < Math.max( left, right )){
 
            if(left < right){
                BNode currLeft = null;

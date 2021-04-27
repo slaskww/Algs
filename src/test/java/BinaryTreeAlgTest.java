@@ -134,12 +134,29 @@ public class BinaryTreeAlgTest {
         btree.addBNode( 29 );
         btree.addBNode( 30 );
         btree.addBNode( 31 );
+        btree.addBNode( 32 );
+        btree.addBNode( 33 );
         btree.addBNode( 22 );
         btree.addBNode( 21 );
         btree.addBNode( 20 );
         btree.addBNode( 19 );
         btree.addBNode( 18 );
         btree.addBNode( 17 );
+        btree.addBNode( 16 );
+        btree.addBNode( 15 );
+        btree.addBNode( 14 );
+        btree.addBNode( 13 );
+        btree.addBNode( 12 );
+        btree.addBNode( 11 );
+        btree.addBNode( 10 );
+        btree.addBNode( 9 );
+        btree.addBNode( 8 );
+        btree.addBNode( 7 );
+        btree.addBNode( 6 );
+        btree.addBNode( 5 );
+        btree.addBNode( 4 );
+        btree.addBNode( 3 );
+        btree.addBNode( 2 );
 
 
         log.info( btree.print( root ) );
