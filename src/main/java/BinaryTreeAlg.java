@@ -80,44 +80,27 @@ public class BinaryTreeAlg {
 
     public BNode balanceBTree(BNode root){
 
-        if(root == null) return null;
+       if(root == null) return null;
 
-       int left = countNodes(root.left);
-       int right = countNodes(root.right );
+       int leftBranchDepth = countNodes(root.left);
+       int rightBranchDepth = countNodes(root.right );
 
-        while(Math.abs(left - right) > 1 || Math.log10(size)/Math.log10( 2 ) + 1 < Math.max( left, right )){
+        while(isImbalanceInBTree(leftBranchDepth, rightBranchDepth) || isComplexityOfBTreeNotOptimal(leftBranchDepth, rightBranchDepth)){
 
-           if(left < right){
-               BNode currLeft = null;
-               if(root.left != null) currLeft = root.left;
-               root.left = new BNode(root.value);
-               root.left.value = root.value;
-               root.left.right = root.right.left;
-               root.left.left = currLeft;
-               root.right.left = null;
-               root.value = root.right.value;
-               root.right = root.right.right;
+
+           if(leftBranchDepth < rightBranchDepth){
+              balanceLeftBranch( root );
            }
             else{
-                BNode currRight = null;
-                if( root.right != null)  currRight = root.right;
-                root.right = new BNode(0);
-                root.right.value = root.value;
-               root.right.left = root.left.right;
-               root.right.right = currRight;
-               root.left.right = null;
-               root.value = root.left.value;
-               root.left = root.left.left;
+                balanceRightBranch( root );
            }
 
             root.left = balanceBTree( root.left );
             root.right = balanceBTree( root.right );
 
-            left = countNodes(root.left);
-            right = countNodes(root.right );
-
+            leftBranchDepth = countNodes(root.left);
+            rightBranchDepth = countNodes(root.right );
        }
-
         return root;
     }
 
@@ -130,6 +113,48 @@ public class BinaryTreeAlg {
         int rightNodes = countNodes( node.right );
 
         return leftNodes > rightNodes ? leftNodes + 1 : rightNodes + 1;
+    }
+
+    private BNode balanceLeftBranch(BNode root){
+
+        BNode currLeftChild = null;
+        if(root.left != null) currLeftChild = root.left;
+        root.left = new BNode(root.value);
+        root.left.value = root.value;
+        root.left.right = root.right.left;
+        root.left.left = currLeftChild;
+        root.right.left = null;
+        root.value = root.right.value;
+        root.right = root.right.right;
+
+        return root;
+    }
+
+    private BNode balanceRightBranch(BNode root){
+
+        BNode currRightChild = null;
+        if( root.right != null)  currRightChild = root.right;
+        root.right = new BNode(0);
+        root.right.value = root.value;
+        root.right.left = root.left.right;
+        root.right.right = currRightChild;
+        root.left.right = null;
+        root.value = root.left.value;
+        root.left = root.left.left;
+
+        return root;
+    }
+
+    private boolean isImbalanceInBTree(int leftBranchDepth, int rightBranchDepth){
+
+        return (Math.abs(leftBranchDepth - rightBranchDepth)) > 1;
+    }
+
+    private boolean isComplexityOfBTreeNotOptimal(int leftBranchDepth, int rightBranchDepth){
+
+        //Optimal complexity for binary search ought to be O(logN)
+
+       return (Math.log10(size)/Math.log10( 2 )) < Math.max( leftBranchDepth, rightBranchDepth );
     }
 
     private BNode addRecursively(BNode curr, int value) {

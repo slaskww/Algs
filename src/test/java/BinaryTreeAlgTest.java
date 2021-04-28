@@ -1,6 +1,8 @@
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
+import java.util.Random;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @Slf4j
@@ -114,11 +116,15 @@ public class BinaryTreeAlgTest {
         btree.addBNode( 30 );
 
 
-        assertEquals( 8, btree.getSize());
+
+       assertEquals( 8, btree.getSize());
 
         btree.addBNode( 30 );
 
         assertEquals( 8, btree.getSize());
+
+        btree.balanceBTree( root );
+        log.info( btree.print( root ) );
     }
 
     @Test
