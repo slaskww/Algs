@@ -41,100 +41,106 @@ public class BinaryTreeAlg {
 
     }
 
-    public BNode searchBNode(int value){
+    public BNode searchBNode(int value) {
 
-      return  searchBNodeRecursively( this.root, value );
+        return searchBNodeRecursively( this.root, value );
     }
 
 
-
-    public boolean existBNode(int value){
-        return existBNodeRecursively(this.root, value );
+    public boolean existBNode(int value) {
+        return existBNodeRecursively( this.root, value );
     }
 
 
+    public BNode removeBNode(int value) {
 
-    public BNode removeBNode(int value){
-
-        return removeBNoteRecursively(this.root, value);
+        return removeBNoteRecursively( this.root, value );
     }
 
 
-
-
-    public String print(BNode root){
+    public String print(BNode root) {
 
         StringBuilder printedBTree = new StringBuilder();
         StringBuilder padding = new StringBuilder().append( '\t' );
 
 
-        if (root == null) throw new IllegalArgumentException("Binary Tree is empty");
+        if (root == null) throw new IllegalArgumentException( "Binary Tree is empty" );
 
         printedBTree
                 .append( "\n  " )
                 .append( root.value )
                 .append( "\n" );
-        return printRecursively( root, printedBTree, padding).toString() ;
+        return printRecursively( root, printedBTree, padding ).toString();
 
     }
 
-    public BNode balanceBTree(BNode root){
+    public BNode balanceBTree(BNode root) {
 
-       if(root == null) return null;
+        if (root == null) return null;
 
-       int leftBranchDepth = countNodes(root.left);
-       int rightBranchDepth = countNodes(root.right );
+        int leftBranchDepth = countBranchDepth( root.left );
+        int rightBranchDepth = countBranchDepth( root.right );
 
-        while(isImbalanceInBTree(leftBranchDepth, rightBranchDepth) || isComplexityOfBTreeNotOptimal(leftBranchDepth, rightBranchDepth)){
+        while (isImbalanceInBTree( leftBranchDepth, rightBranchDepth ) || isComplexityOfBTreeNotOptimal( leftBranchDepth, rightBranchDepth )) {
 
-
-           if(leftBranchDepth < rightBranchDepth){
-              balanceLeftBranch( root );
-           }
-            else{
+            if (leftBranchDepth < rightBranchDepth) {
+                balanceLeftBranch( root );
+            } else {
                 balanceRightBranch( root );
-           }
+            }
 
             root.left = balanceBTree( root.left );
             root.right = balanceBTree( root.right );
 
-            leftBranchDepth = countNodes(root.left);
-            rightBranchDepth = countNodes(root.right );
-       }
+            leftBranchDepth = countBranchDepth( root.left );
+            rightBranchDepth = countBranchDepth( root.right );
+        }
         return root;
     }
 
-    private int countNodes(BNode node){
+    public int countBranchDepth(BNode node) {
 
-        if(node == null) return 0;
-        if(node.left == null && node.right == null) return 1;
+        if (node == null) return 0;
+        if (node.left == null && node.right == null) return 1;
 
-        int leftNodes = countNodes( node.left );
-        int rightNodes = countNodes( node.right );
+        int leftNodes = countBranchDepth( node.left );
+        int rightNodes = countBranchDepth( node.right );
 
         return leftNodes > rightNodes ? leftNodes + 1 : rightNodes + 1;
     }
 
-    private BNode balanceLeftBranch(BNode root){
+    private BNode balanceLeftBranch(BNode root) {
 
         BNode currLeftChild = null;
-        if(root.left != null) currLeftChild = root.left;
-        root.left = new BNode(root.value);
+
+        if (countBranchDepth( root.right.right ) <= countBranchDepth( root.left )) {
+            int oldRightVal = root.right.value;
+            root.right.value = root.right.left.value;
+            root.right.right = root.right.left.right;
+            root.right.left = root.right.left.left;
+
+            if (root.right.right == null) {
+                root.right.right = new BNode( oldRightVal );
+            } else addBNode( oldRightVal );
+
+        }
+        if (root.left != null) currLeftChild = root.left;
+        root.left = new BNode( root.value );
         root.left.value = root.value;
         root.left.right = root.right.left;
         root.left.left = currLeftChild;
         root.right.left = null;
         root.value = root.right.value;
         root.right = root.right.right;
-
         return root;
     }
 
-    private BNode balanceRightBranch(BNode root){
+
+    private BNode balanceRightBranch(BNode root) {
 
         BNode currRightChild = null;
-        if( root.right != null)  currRightChild = root.right;
-        root.right = new BNode(0);
+        if (root.right != null) currRightChild = root.right;
+        root.right = new BNode( 0 );
         root.right.value = root.value;
         root.right.left = root.left.right;
         root.right.right = currRightChild;
@@ -145,16 +151,16 @@ public class BinaryTreeAlg {
         return root;
     }
 
-    private boolean isImbalanceInBTree(int leftBranchDepth, int rightBranchDepth){
+    private boolean isImbalanceInBTree(int leftBranchDepth, int rightBranchDepth) {
 
-        return (Math.abs(leftBranchDepth - rightBranchDepth)) > 1;
+        return (Math.abs( leftBranchDepth - rightBranchDepth )) > 1;
     }
 
-    private boolean isComplexityOfBTreeNotOptimal(int leftBranchDepth, int rightBranchDepth){
+    private boolean isComplexityOfBTreeNotOptimal(int leftBranchDepth, int rightBranchDepth) {
 
-        //Optimal complexity for binary search ought to be O(logN)
+        //Optimal complexity for binary search is O(logN)
 
-       return (Math.log10(size)/Math.log10( 2 )) < Math.max( leftBranchDepth, rightBranchDepth );
+        return (Math.log10( size ) / Math.log10( 2 )) + 1 < Math.max( leftBranchDepth, rightBranchDepth );
     }
 
     private BNode addRecursively(BNode curr, int value) {
@@ -259,26 +265,26 @@ public class BinaryTreeAlg {
 
         if (root.right != null && root.left == null) {
             printedBTree
-                    .append( padding)
-                    .append(singleTwig )
+                    .append( padding )
+                    .append( singleTwig )
                     .append( root.right.value )
-                    .append( newLine);
-            printedBTree = printRecursively( root.right, printedBTree, new StringBuilder().append(padding).append(singleSpace));
+                    .append( newLine );
+            printedBTree = printRecursively( root.right, printedBTree, new StringBuilder().append( padding ).append( singleSpace ) );
         } else if (root.right != null) {
             printedBTree
-                    .append( padding)
-                    .append(doubleTwig )
+                    .append( padding )
+                    .append( doubleTwig )
                     .append( root.right.value )
-                    .append(newLine);
-            printedBTree = printRecursively( root.right, printedBTree, new StringBuilder().append(padding).append( linker + singleSpace ));
+                    .append( newLine );
+            printedBTree = printRecursively( root.right, printedBTree, new StringBuilder().append( padding ).append( linker + singleSpace ) );
         }
         if (root.left != null) {
             printedBTree
-                    .append( padding)
-                    .append(singleTwig)
+                    .append( padding )
+                    .append( singleTwig )
                     .append( root.left.value )
-                    .append(newLine);
-            printedBTree = printRecursively( root.left, printedBTree, new StringBuilder().append(padding).append(singleSpace ));
+                    .append( newLine );
+            printedBTree = printRecursively( root.left, printedBTree, new StringBuilder().append( padding ).append( singleSpace ) );
         }
 
         return printedBTree;
