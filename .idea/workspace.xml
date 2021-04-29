@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f48091f6-5837-4b55-ac82-ea2d59b0e855" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BinaryTreeAlg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BinaryTreeAlg.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BinaryTreeAlgTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BinaryTreeAlgTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BinaryTreeAlg$BNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BinaryTreeAlg$BNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BinaryTreeAlg.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BinaryTreeAlg.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/BinaryTreeAlgTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/BinaryTreeAlgTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +133,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="android.dex.compiler" />
   </component>
-  <component name="RunManager" selected="JUnit.BinaryTreeAlgTest">
+  <component name="RunManager" selected="JUnit.BinaryTreeAlgTest.testEmptyBTreeAsInOrderList">
     <configuration name="BinaryTreeAlgTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="qs" />
       <option name="PACKAGE_NAME" value="" />
@@ -139,11 +143,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BinaryTreeAlgTest.testBTreeSizeAfterAddingNewNodes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BinaryTreeAlgTest.testBTreeAsInOrderList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="qs" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="BinaryTreeAlgTest" />
-      <option name="METHOD_NAME" value="testBTreeSizeAfterAddingNewNodes" />
+      <option name="METHOD_NAME" value="testBTreeAsInOrderList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -169,11 +173,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BinaryTreeAlgTest.testPrintingBTree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BinaryTreeAlgTest.testEmptyBTreeAsInOrderList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="qs" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="BinaryTreeAlgTest" />
-      <option name="METHOD_NAME" value="testPrintingBTree" />
+      <option name="METHOD_NAME" value="testEmptyBTreeAsInOrderList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -181,11 +185,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BinaryTreeAlgTest.testEmptyBTreeAsInOrderList" />
+        <item itemvalue="JUnit.BinaryTreeAlgTest.testBTreeAsInOrderList" />
         <item itemvalue="JUnit.BinaryTreeAlgTest" />
         <item itemvalue="JUnit.BinaryTreeAlgTest.testBTreeSizeAfterAddingTheSameNode" />
         <item itemvalue="JUnit.BinaryTreeAlgTest.testBalanceBTree" />
-        <item itemvalue="JUnit.BinaryTreeAlgTest.testBTreeSizeAfterAddingNewNodes" />
-        <item itemvalue="JUnit.BinaryTreeAlgTest.testPrintingBTree" />
       </list>
     </recent_temporary>
   </component>

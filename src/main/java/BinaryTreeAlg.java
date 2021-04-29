@@ -2,6 +2,11 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 @Slf4j
 @Getter
 public class BinaryTreeAlg {
@@ -74,7 +79,12 @@ public class BinaryTreeAlg {
 
     }
 
-    public BNode balanceBTree(BNode root) {
+    public BNode balanceBTree(){
+
+        return balanceBTreeRecursively( this.root );
+    }
+
+    private BNode balanceBTreeRecursively(BNode root) {
 
         if (root == null) return null;
 
@@ -89,8 +99,8 @@ public class BinaryTreeAlg {
                 balanceRightBranch( root );
             }
 
-            root.left = balanceBTree( root.left );
-            root.right = balanceBTree( root.right );
+            root.left = balanceBTreeRecursively( root.left );
+            root.right = balanceBTreeRecursively( root.right );
 
             leftBranchDepth = countBranchDepth( root.left );
             rightBranchDepth = countBranchDepth( root.right );
@@ -291,4 +301,25 @@ public class BinaryTreeAlg {
     }
 
 
+    public List<Integer> inOrderList(){
+
+        if(this.root == null) return Collections.emptyList();
+        List<Integer> list = new ArrayList<>();
+        list.addAll( inOrderRecursively(root.left));
+        list.add( root.value );
+        list.addAll( inOrderRecursively(root.right));
+
+        return list;
+    }
+
+    private List<Integer> inOrderRecursively(BNode node){
+
+        if(node == null) return Collections.emptyList();
+        List<Integer> list = new ArrayList<>();
+        list.addAll( inOrderRecursively(node.left));
+        list.add( node.value );
+        list.addAll( inOrderRecursively(node.right));
+
+        return list;
+    }
 }

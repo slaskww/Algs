@@ -1,6 +1,10 @@
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @Slf4j
@@ -119,7 +123,7 @@ public class BinaryTreeAlgTest {
 
         assertEquals( 8, btree.getSize() );
 
-        btree.balanceBTree( root );
+        btree.balanceBTree();
     }
 
     @Test
@@ -163,7 +167,7 @@ public class BinaryTreeAlgTest {
         assertFalse( bTreeImbalance <= 1 );
         assertFalse( optComplexity >= realComplexity );
 
-        btree.balanceBTree( root );
+        btree.balanceBTree();
 
         //Binary Tree depth values, real complexity and imbalance value after balancing
         leftBranchDepth = btree.countBranchDepth( root.getLeft() );
@@ -230,5 +234,45 @@ public class BinaryTreeAlgTest {
 
         assertEquals( 1, addedNode.getLevel() );
 
+    }
+
+    @Test
+    public void testBTreeAsInOrderList(){
+
+        BinaryTreeAlg bTree = new BinaryTreeAlg();
+        bTree.addBNode( 62 );
+        bTree.addBNode( 49 );
+        bTree.addBNode( 17 );
+        bTree.addBNode( 72 );
+        bTree.addBNode( 73 );
+        bTree.addBNode( 74 );
+        bTree.addBNode( 85 );
+        bTree.addBNode( 97 );
+        bTree.addBNode( 27 );
+        bTree.addBNode( 22 );
+        bTree.addBNode( 35 );
+        bTree.addBNode( 58 );
+        bTree.addBNode( 100 );
+        bTree.addBNode( 70 );
+        bTree.addBNode( 48 );
+        bTree.addBNode( 99 );
+        bTree.addBNode( 67 );
+        bTree.addBNode( 6 );
+        bTree.addBNode( 29 );
+        bTree.addBNode( 51 );
+
+        List<Integer> inOrderList = bTree.inOrderList();
+        List<Integer> expectedList = Arrays.asList(  6, 17, 22, 27, 29, 35, 48, 49, 51, 58, 62, 67, 70, 72, 73, 74, 85, 97, 99, 100 );
+
+        assertEquals( expectedList, inOrderList );
+    }
+
+    @Test
+    public void testEmptyBTreeAsInOrderList(){
+
+        BinaryTreeAlg bTree = new BinaryTreeAlg();
+        List<Integer> inOrderList = bTree.inOrderList();
+
+        assertEquals( Collections.EMPTY_LIST, inOrderList );
     }
 }
