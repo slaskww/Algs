@@ -88,7 +88,7 @@ public class BinaryTreeAlgTest {
         btree.addBNode( 21 );
         btree.addBNode( 25 );
 
-        log.info( btree.print( root ) );
+        log.info( btree.print());
     }
 
     @Test
@@ -96,7 +96,7 @@ public class BinaryTreeAlgTest {
 
         BinaryTreeAlg btree = new BinaryTreeAlg();
 
-        assertThrows( IllegalArgumentException.class, () -> btree.print( null ) );
+        assertThrows( IllegalArgumentException.class, () -> btree.print() );
     }
 
     @Test

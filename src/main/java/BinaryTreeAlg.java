@@ -58,19 +58,19 @@ public class BinaryTreeAlg {
     }
 
 
-    public String print(BNode root) {
+    public String print() {
 
         StringBuilder printedBTree = new StringBuilder();
         StringBuilder padding = new StringBuilder().append( '\t' );
 
 
-        if (root == null) throw new IllegalArgumentException( "Binary Tree is empty" );
+        if (this.root == null) throw new IllegalArgumentException( "Binary Tree is empty" );
 
         printedBTree
                 .append( "\n  " )
-                .append( root.value )
+                .append( this.root.value )
                 .append( "\n" );
-        return printRecursively( root, printedBTree, padding ).toString();
+        return printRecursively( this.root, printedBTree, padding ).toString();
 
     }
 
